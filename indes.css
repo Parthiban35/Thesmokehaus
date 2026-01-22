@@ -1,0 +1,413 @@
+body{
+    background-color: rgb(29, 27, 27);
+}
+.img3{
+    width: 150px;
+}
+.div1{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 850px;
+    margin-top: -120px;
+    background-color: black;
+    position: fixed;
+}
+.A{
+    color: white;
+    font-size: 17px;
+}
+.box{
+    box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+    padding: 15px;
+}
+.Box:hover{
+    box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+    padding-top: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 25px;
+}
+.b1,.b2,.b3,.b4,.b5{
+    color: white;
+}
+.b1:hover,.b2:hover,.b3:hover,.b4:hover,.b5:hover{
+    color: rgb(161, 124, 29);
+}
+.b{
+    padding: 15px;
+}
+.para{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: 230px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+}
+a{
+    text-decoration: none;
+}
+.p1{
+    color: white;
+}
+.img{
+    width: 150px;
+    margin-left: 100px;
+}
+.para7{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 280px;
+    margin-top: -120px;
+}
+.a1,.a2,.a3,.a4,.a5{
+    color: white;
+}
+.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover{
+    color: rgb(161, 124, 29);
+}
+.div2{
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 310px;
+    margin-top: -20px;
+    word-spacing: 6px;
+}
+.img{
+    width: 150px;
+    margin-left: 100px;
+}
+.para7{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 280px;
+    margin-top: -120px;
+}
+.a1,.a2,.a3,.a4,.a5{
+    color: white;
+}
+.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover{
+    color: rgb(161, 124, 29);
+}
+.div2{
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 310px;
+    margin-top: -20px;
+    word-spacing: 6px;
+}
+.img2{
+    width: 180px;
+    margin-left: 1100px;
+    margin-top: -250px;
+}
+.A1,.A3,.A4{
+    color: rgb(176, 142, 58);
+}
+.icon7{
+    color: rgb(176, 142, 58);
+}
+.icon7:hover{
+    color: rgb(161, 124, 29);
+}
+.A1:hover,.A3:hover,.A4:hover{
+    color: rgb(161, 124, 29);
+}
+.A2{
+    margin-left: 1150px;
+    word-spacing: 15px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: -10px;
+}
+.b6{
+    margin-left: 20px;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+}
+.b6:hover{
+    color: rgb(161, 124, 29);
+}
+.para8{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 100px;
+    font-weight: bold;
+    word-spacing: -5px;
+}
+.B1:hover,.B2:hover{
+    color: rgb(161, 124, 29);
+}
+.bold{
+    margin-left: 500px;
+}
+.bold:hover{
+    color: rgb(161, 124, 29);
+}
+.para{
+    font-family: "Rye", serif;
+    font-size: 60px;
+    line-height: -40px;
+    /* transition: 8000ms;
+    scale: 1.25; */
+}
+.Bold1{
+    font-size: 80px;
+    margin-left: -10px;
+    font-weight: normal;
+}
+.Icon1{
+    font-size: 50px;
+    color: rgb(161, 124, 29);
+    margin-left: 800px;
+    margin-top: 50px;
+}
+.Icon1:hover{
+    color: rgb(10, 10, 10);
+}
+.Para1{
+    color: white;
+    font-family: "Rye", serif;
+    font-size: 40px;
+    margin-left: 670px;
+    margin-top: -40px;
+}
+.Para2{
+    color: rgb(5, 5, 5);
+    font-size: 40px;
+    font-family: "Finger Paint", sans-serif;
+    line-height: 37px;
+    margin-left: 710px;
+    margin-top: -120px;
+}
+.Para2:hover{
+    color: rgb(161, 124, 29);
+}
+.divi{
+    box-shadow: 2px 3px 4px 300px rgb(162, 135, 66) inset;
+    height: 500px;
+    width: 450px;
+    margin-left: 150px;
+    color: white; 
+    padding-top: 20px;
+    margin-top: 100px;
+}
+.imgg5{
+    margin-left: 45px;
+}
+.BB{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    font-weight: normal;
+    margin-left: 130px;
+    padding-top: 200px;
+    color: black;
+}
+.BB10{
+    font-size: 25px;
+    margin-left: 145px;
+}
+.BB2{
+    font-size: 15px;
+    margin-left: 100px;
+    line-height: 60px;
+}
+.BB3{
+    font-size: 15px;
+    margin-left: 140px;
+}
+.A1{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.box1{
+    box-shadow: 1px 2px 3px 50px rgb(6, 6, 6) inset;
+    padding: 15px;
+    
+}
+.B{
+    margin-left: 130px;
+}
+.Box1:hover{
+    box-shadow: 0px 0px 0px 2px rgb(8, 8, 8) inset;
+    padding-top: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 25px;
+}
+.BB5{
+    font-size: 15px;
+    color: black;
+    text-transform: uppercase;
+    border-bottom: solid;
+    margin-left: 180px;
+    padding-bottom: 8px;
+}
+.BB5:hover{
+    border-color: black;
+    border-top: solid;
+    padding-top: 3px;
+}
+.imgg1{
+    width: 100%;
+    height: 600px;
+}
+.Paraa{
+    margin-top: -550px;
+}
+.imgg2{
+    margin-left: 550px;
+}
+.divi1{
+    box-shadow: 2px 3px 4px 300px rgb(8, 8, 8) inset;
+    height: 400px;
+    width: 350px;
+    margin-left: 500px;
+    color: white; 
+    padding-top: 20px;
+    margin-top: 150px;
+}
+.imgg6{
+    margin-left: 30px;
+}
+.Paraa1{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.Bold2{
+    margin-left: 130px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.AA2{
+    color: white;
+    font-size: 17px;
+    text-transform: uppercase;
+}
+.boxs2{
+    box-shadow: 1px 2px 3px 50px rgb(129, 105, 45) inset;
+    padding: 10px;
+    
+}
+.BB1{
+    margin-left: 80px;
+}
+.BBB1{
+    margin-left: 140px;
+    font-size: 25px;
+}
+
+.Boxs2:hover{
+    box-shadow: 0px 0px 0px 2px rgb(129, 105, 45) inset;
+    padding-top: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 20px;
+}
+.Div1{
+    width: 100%;
+    background-color: rgb(191, 161, 85);
+    height: 380px;
+    padding-top: 15px;
+    margin-top: 100px;
+}
+.PARA{
+    font-family: "Rye", serif;
+    font-size: 50px;
+    text-align: center;
+}
+.PARA1{
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.BBB{
+    margin-left: 680px;
+}
+
+.DIV{
+    background-image: url('juicy-chicken-burger-with-fresh-lettuce-crispy-french-fries-wooden-board.jpg');
+    background-repeat: no-repeat;
+    background-attachment:scroll;
+    background-size: cover;
+    height: 800px;
+    margin-top: -50px;
+    padding-top: 150px;
+}
+.DIV1{
+    background-image: url('front-view-different-drinks-colorful-inside-bottles.jpg');
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 500px;
+    margin-top: 100px;
+    margin-left: 400px;
+    padding-top: 1px;
+    padding-bottom: 100px;
+}
+.Divi{
+    color: white;
+    margin-left: 700px;
+}
+.Para5{
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+.Para6{
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+.BBB1{
+    margin-left: 310px;
+}
+.Divi2{
+    background-image: url('antique-bookshelf-rustic-domestic-room-adds-elegance-decor-generated-by-ai.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    width: 100%;
+    height: 600px;
+    padding-top: 150px;
+    margin-top: 100px;
+}
+.Paraa2{
+    margin-top: 100px;
+    color: balck;
+}
+.Para9,.Para10{
+    font-family: "Rye", serif;
+    color: white;
+    text-transform: uppercase;
+    margin-left: 530px;
+}
+.Para9{
+    font-size: 50px;
+}
+.Para10{
+    margin-top: -50px;
+    font-size: 80px;
+}
+.Div5{
+    background-image: url('photorealistic-wedding-venue-with-intricate-decor-ornaments.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    width: 100%;
+    height: 500px;
+    padding-top: 20px;
+}

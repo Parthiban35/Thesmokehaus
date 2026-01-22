@@ -1,0 +1,202 @@
+body{
+    background-color: black;
+}
+.img3{
+    width: 150px;
+}
+.div1{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 850px;
+    margin-top: -120px;
+    background-color: black;
+    position: fixed;
+}
+.A{
+    color: white;
+    font-size: 17px;
+}
+.box{
+    box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+    padding: 15px;
+}
+.Box:hover{
+    box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+    padding-top: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 25px;
+}
+.b1,.b2,.b3,.b4,.b5{
+    color: white;
+}
+.b1:hover,.b2:hover,.b3:hover,.b4:hover,.b5:hover{
+    color: rgb(161, 124, 29);
+}
+.b{
+    padding: 15px;
+}
+.para{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: -560px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+    opacity: 0.9;
+}
+a{
+    text-decoration: none;
+}
+.para1{
+    font-family: "Rye", serif;
+    color: rgb(176, 142, 58);
+    font-size: 60px;
+    margin-top: -450px;
+    margin-left: 300px;
+    text-transform: uppercase;
+    opacity: 0.9;
+
+}
+.para2{
+    color: white;
+    font-family:monospace;
+    font-weight: bold;
+    margin-left: 300px;
+    font-size: 16px;
+    opacity: 0.9;
+
+}
+.img1{
+    margin-top: 200px;
+    width: 400px;
+    margin-left: 200px;
+}
+.para3{
+    font-family: "Rye", serif;
+    color: white;
+    font-size: 60px;
+    margin-top: -430px;
+    margin-left: 800px;
+    text-transform: uppercase;
+}
+.para4{
+    color: white;
+    font-family:monospace;
+    font-weight: bold;
+    margin-left: 800px;
+    font-size: 16px;
+}
+.para5{
+    font-family: "Rye", serif;
+    color: white;
+    font-size: 60px;
+    margin-top: -630px;
+    margin-left: 500px;
+    text-transform: uppercase;
+}
+.para6{
+    color: white;
+    font-family:monospace;
+    font-weight: bold;
+    margin-left: 400px;
+    font-size: 16px;
+}
+.img{
+    width: 150px;
+    margin-left: 100px;
+}
+.para7{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 280px;
+    margin-top: -120px;
+}
+.a1,.a2,.a3,.a4,.a5{
+    color: white;
+}
+.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover{
+    color: rgb(161, 124, 29);
+}
+.div2{
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 310px;
+    margin-top: -20px;
+    word-spacing: 6px;
+}
+.img2{
+    width: 180px;
+    margin-left: 1100px;
+    margin-top: -250px;
+}
+.A1,.A3,.A4{
+    color: rgb(176, 142, 58);
+}
+.A1:hover,.A2:hover,.A3:hover,.A4:hover{
+    color: rgb(161, 124, 29);
+
+}
+.A2{
+    margin-left: 1150px;
+    word-spacing: 15px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: -10px;
+}
+.b6{
+    margin-left: 20px;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+}
+.b6:hover{
+    color: rgb(161, 124, 29); 
+}
+.para8{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 100px;
+    font-weight: bold;
+    word-spacing: -5px;
+}
+.B1:hover,.B2:hover{
+    color: rgb(161, 124, 29);
+}
+.bold{
+    margin-left: 500px;
+}
+.bold:hover{
+    color: rgb(161, 124, 29);
+}
+.imgg1{
+    width: 100%;
+    opacity: 0.6;
+}
+.imgg2{
+    width: 1200px;
+    height: 500px;
+    margin-left: 200px;
+    margin-top: 400px;
+    opacity: 0.6;
+}
+.imgg3{
+    width: 1200px;
+    height: 500px;
+    margin-left: 200px;
+    margin-top: 400px; 
+}
+.imgg4{
+    margin-top: -250px;
+    width: 230px;
+    height: 180px;
+    margin-left: 300px;
+}
+.cl{
+    margin-top: 500px;
+}

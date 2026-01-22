@@ -1,0 +1,351 @@
+body{
+    background-color: black;
+}
+.img3{
+    width: 150px;
+}
+.div1{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 850px;
+    margin-top: -120px;
+    background-color: black;
+    position: fixed;
+}
+.A{
+    color: white;
+    font-size: 17px;
+}
+.box{
+    box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+    padding: 15px;
+}
+.Box:hover{
+    box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+    padding-top: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 25px;
+}
+.b1,.b2,.b3,.b4,.b5{
+    color: white;
+}
+.b1:hover,.b2:hover,.b3:hover,.b4:hover,.b5:hover{
+    color: rgb(161, 124, 29);
+}
+.b{
+    padding: 15px;
+}
+.para{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: 230px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+}
+a{
+    text-decoration: none;
+}
+.p1{
+    color: white;
+}
+.img{
+    width: 150px;
+    margin-left: 100px;
+}
+.para7{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 280px;
+    margin-top: -120px;
+}
+.a1,.a2,.a3,.a4,.a5{
+    color: white;
+}
+.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover{
+    color: rgb(161, 124, 29);
+}
+.div2{
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 310px;
+    margin-top: -20px;
+    word-spacing: 6px;
+}
+.img{
+    width: 150px;
+    margin-left: 100px;
+}
+.para7{
+    font-family: "Rye", serif;
+    font-size: 40px;
+    color: white;
+    margin-left: 280px;
+    margin-top: -120px;
+}
+.a1,.a2,.a3,.a4,.a5{
+    color: white;
+}
+.a1:hover,.a2:hover,.a3:hover,.a4:hover,.a5:hover{
+    color: rgb(161, 124, 29);
+}
+.div2{
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    margin-left: 310px;
+    margin-top: -20px;
+    word-spacing: 6px;
+}
+.img2{
+    width: 180px;
+    margin-left: 1100px;
+    margin-top: -250px;
+}
+.A1,.A3,.A4{
+    color: rgb(176, 142, 58);
+}
+.A1:hover,.A3:hover,.A4:hover{
+    color: rgb(161, 124, 29);
+}
+.A2{
+    margin-left: 1150px;
+    word-spacing: 15px;
+    font-size: 20px;
+    line-height: 40px;
+    margin-top: -10px;
+}
+.b6{
+    margin-left: 20px;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: white;
+}
+.b6:hover{
+    color: rgb(161, 124, 29);
+}
+.para8{
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    margin-left: 100px;
+    font-weight: bold;
+    word-spacing: -5px;
+}
+.B1:hover,.B2:hover{
+    color: rgb(161, 124, 29);
+}
+.bold{
+    margin-left: 500px;
+}
+.bold:hover{
+    color: rgb(161, 124, 29);
+}
+.para{
+    font-size: 60px;
+    color: white;
+    text-align: center;
+    margin-top: -480px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+}
+.Para1{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-top: -160px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-left: -510px;
+}
+.para1{
+    font-size: 70px;
+    color: rgb(208, 171, 77);
+    text-align: center;
+    margin-top: 490px;
+    font-family: "Finger Paint", sans-serif;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-left: -340px;
+}
+th{
+    font-family: "Finger Paint", sans-serif;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.th{
+    padding-left: 100px;
+}
+.th1{
+    padding-left: 30px;
+}
+.table{
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+td{
+    border-bottom: dotted;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    
+}
+.B{
+    font-size: 18px;
+}
+.i{
+    padding-left: 100px;
+    color: rgb(130, 105, 43);
+    font-style: normal;
+    font-weight: bold;
+}
+.I{
+    padding-left: 40px;
+    color: rgb(130, 105, 43);
+    font-style: normal;
+    font-weight: bold;
+}
+.table1{
+    margin-top: -350px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table2{
+    margin-top: 150px;
+    margin-left: 200px;
+    font-weight: bold;
+    color: white;
+}
+.table3{
+    margin-top: -220px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table4{
+    margin-top: 150px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.table5{
+    margin-top: -150px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table6{
+    margin-top: -100px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.table7{
+    
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table8{
+    margin-top: 20px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.para2{
+    font-size: 80px;
+    color: rgb(208, 171, 77);
+    text-align: center;
+    margin-left: -600px;
+    font-family: "Finger Paint", sans-serif;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+.Para2{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    margin-left: -740px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+    margin-top: -170px;
+    text-transform: uppercase;
+}
+.table9{
+    margin-top: 20px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.table10{
+    margin-top: -320px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.para3{
+    font-size: 80px;
+    color: rgb(208, 171, 77);
+    text-align: center;
+    margin-left: -720px;
+    margin-top: 140px;
+    font-family: "Finger Paint", sans-serif;
+    line-height: 70px;
+    text-transform: uppercase;
+}
+.Para3{
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin-left: -820px;
+    margin-top: 140px;
+    font-family: "Rye", serif;
+    line-height: 70px;
+    text-transform: uppercase;
+    margin-top: -170px;
+}
+.table11{
+    margin-top: 70px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.table12{
+    margin-top: -330px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table13{
+    margin-top: 300px;
+    margin-left: 200px;
+    font-weight: bold;
+    color: white;
+}
+.table14{
+    margin-top: -500px;
+    margin-left: 850px;
+    font-weight: bold;
+    color: white;
+}
+.table15{
+    margin-top: 50px;
+    margin-left: 250px;
+    font-weight: bold;
+    color: white;
+}
+.division{
+    margin-top: 350px;
+}
+.Imgg{
+    width: 100%;
+    height: 800px;
+}
