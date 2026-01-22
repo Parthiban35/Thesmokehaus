@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great American Barbecue Food in South Wales at The Smoke Haus</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eater&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* --- Variables & Reset --- */
+        :root {
+            --gold-primary: rgb(176, 142, 58);
+            --gold-hover: rgb(161, 124, 29);
+            --gold-text: rgb(130, 105, 43);
+            --black-bg: #000000;
+            --text-white: #ffffff;
+            --font-head: "Rye", serif;
+            --font-subhead: "Finger Paint", cursive;
+            --font-body: monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--black-bg);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-white);
+            padding: 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-hover);
+        }
+
+        /* Book Button */
+        .btn-book {
+            background: transparent;
+            border: none;
+            color: var(--text-white);
+            font-size: 17px;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-book:hover {
+            box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: var(--gold-hover);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-title {
+            position: absolute;
+            font-family: var(--font-head);
+            font-size: 80px;
+            color: var(--text-white);
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            z-index: 10;
+        }
+
+        /* --- Menu Content Layout --- */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Header (Beers, Bourbon, etc) */
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section-title-gold {
+            font-family: var(--font-subhead);
+            font-size: 70px;
+            color: rgb(208, 171, 77);
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .section-title-white {
+            font-family: var(--font-head);
+            font-size: 50px;
+            color: var(--text-white);
+            text-transform: uppercase;
+            margin-top: -10px;
+            line-height: 1;
+        }
+
+        /* Grid for 2 Columns */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Table Styling */
+        .drink-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-body);
+        }
+
+        .drink-table th {
+            font-family: var(--font-subhead);
+            color: var(--text-white);
+            font-size: 20px;
+            text-transform: uppercase;
+            padding-bottom: 15px;
+            text-align: left;
+            /* No Border Under Heading */
+            border-bottom: none; 
+        }
+
+        .drink-table th:not(:first-child) {
+            text-align: center;
+        }
+
+        /* --- UPDATED BORDER STYLE (Brighter) --- */
+        .drink-table td {
+            /* Increased opacity from 0.3 to 0.6 for brightness */
+            border-bottom: dotted 2px rgba(255, 255, 255, 0.6); 
+            padding-bottom: 15px;
+            padding-top: 10px;
+            vertical-align: top;
+            font-weight: bold;
+            color: #ddd;
+        }
+
+        /* No borders between columns (vertical) */
+        .drink-table td, .drink-table th {
+            border-left: none;
+            border-right: none;
+        }
+
+        /* Specific alignments */
+        .drink-table td:not(:first-child) {
+            text-align: center;
+            padding-left: 10px;
+        }
+
+        .drink-table .alcohol {
+            color: var(--gold-text);
+            font-style: normal;
+        }
+
+        .drink-table .price {
+            color: var(--gold-text);
+            font-style: normal;
+        }
+        
+        .drink-table b {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-white);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #111;
+            padding: 60px 50px 30px 50px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .footer-logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .slogan {
+            font-family: var(--font-head);
+            font-size: 40px;
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a:hover {
+            color: var(--gold-hover);
+        }
+
+        .venue-info {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 15px;
+            color: var(--text-white);
+            margin-bottom: 15px;
+        }
+
+        .venue-info:hover {
+            color: var(--gold-hover);
+            cursor: pointer;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        .social-icons a {
+            color: var(--gold-primary);
+        }
+
+        .social-icons a:hover {
+            color: var(--gold-hover);
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .copyright span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .copyright span:hover {
+            color: var(--gold-hover);
+        }
+
+        .design-credit {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .design-credit:hover {
+            color: var(--gold-hover);
+        }
+
+        /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-title {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-right {
+                align-items: center;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .footer-nav {
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .section-title-gold {
+                font-size: 50px;
+            }
+            
+            .section-title-white {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="348s-removebg-preview.png" alt="The Smoke Haus Logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="About.html" class="nav-link">ABOUT</a>
+            <a href="menu.html" class="nav-link">MENU</a>
+            <a href="Drink.html" class="nav-link">DRINKS</a>
+            <a href="offer.html" class="nav-link">OFFERS</a>
+            <a href="music.html" class="nav-link">MUSIC</a>
+            <a href="booking.html" class="btn-book">BOOK ONLINE</a>
+        </nav>
+    </header>
+
+    <!-- Hero Image & Title -->
+    <section class="hero">
+        <img src="front-view-different-drinks-colorful-inside-bottles.jpg" class="hero-img" alt="Drinks Background">
+        <h1 class="hero-title">DRINKS</h1>
+    </section>
+
+    <!-- Main Menu Area -->
+    <main class="menu-container">
+
+        <!-- Section: Beers and Ciders -->
+        <div class="section-header">
+            <div class="section-title-gold">Beers and Ciders</div>
+            <div class="section-title-white">Beers and Ciders</div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 1: Draught Beer -->
+            <table class="drink-table">
+                <tr>
+                    <th>Draught Beer</th>
+                    <th>Alc</th>
+                    <th>Pint</th>
+                    <th>Half</th>
+                </tr>
+                <tr><td><b>Budweiser</b></td><td class="alcohol">4.3%</td><td class="price">£5.10</td><td class="price">£2.55</td></tr>
+                <tr><td><b>Stella Artois</b></td><td class="alcohol">4.8%</td><td class="price">£5.70</td><td class="price">£2.85</td></tr>
+                <tr><td><b>Camden Hells</b></td><td class="alcohol">4.6%</td><td class="price">£6.10</td><td class="price">£3.05</td></tr>
+                <tr><td><b>Corona</b></td><td class="alcohol">4.5%</td><td class="price">£6.30</td><td class="price">£3.15</td></tr>
+                <tr><td><b>Goose Island Midway</b></td><td class="alcohol">4.1%</td><td class="price">£6.60</td><td class="price">£3.30</td></tr>
+                <tr><td><b>Blue Moon</b></td><td class="alcohol">5.4%</td><td class="price">£6.90</td><td class="price">£3.45</td></tr>
+            </table>
+
+            <!-- Table 2: Bottled Beer -->
+            <table class="drink-table">
+                <tr>
+                    <th>Bottled Beer</th>
+                    <th>Alc</th>
+                    <th>Price</th>
+                </tr>
+                <tr><td><b>Becks</b></td><td class="alcohol">4.8%</td><td class="price">£4.25</td></tr>
+                <tr><td><b>Budweiser</b></td><td class="alcohol">4.8%</td><td class="price">£4.70</td></tr>
+                <tr><td><b>Corona Mexican NRB</b></td><td class="alcohol">4.5%</td><td class="price">£4.95</td></tr>
+                <tr><td><b>Modelo</b></td><td class="alcohol">4.5%</td><td class="price">£4.95</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 3: Draught Cider -->
+            <table class="drink-table">
+                <tr><th>Draught Cider</th><th>Alc</th><th>Pint</th><th>Half</th></tr>
+                <tr><td><b>Magners Original</b></td><td class="alcohol">4.5%</td><td class="price">£5.70</td><td class="price">£2.85</td></tr>
+                <tr><td><b>Kopparberg Strawberry & Lime</b></td><td class="alcohol">4.5%</td><td class="price">£6.50</td><td class="price">£3.25</td></tr>
+            </table>
+
+            <!-- Table 4: Canned Beer -->
+            <table class="drink-table">
+                <tr><th>Canned Beer</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Camden Pale Ale</b></td><td class="alcohol">4.0%</td><td class="price">£4.75</td></tr>
+                <tr><td><b>Camden Hells</b></td><td class="alcohol">4.6%</td><td class="price">£4.75</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 5: Draught Stout -->
+            <table class="drink-table">
+                <tr><th>Draught Stout</th><th>Alc</th><th>Pint</th><th>Half</th></tr>
+                <tr><td><b>Camden Stout</b></td><td class="alcohol">4.0%</td><td class="price">£6.10</td><td class="price">£3.05</td></tr>   
+            </table>
+
+            <!-- Table 6: Bottled Cider -->
+            <table class="drink-table">
+                <tr><th>Bottled Cider</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Inch's Apple</b></td><td class="alcohol">4.5%</td><td class="price">£5.15</td></tr>
+                <tr><td><b>Kopparberg Pear</b></td><td class="alcohol">4.5%</td><td class="price">£5.75</td></tr>
+                <tr><td><b>Kopparberg Strawberry & Lime</b></td><td class="alcohol">4.0%</td><td class="price">£5.75</td></tr>
+                <tr><td><b>Kopparberg Mixed Fruit</b></td><td class="alcohol">4.0%</td><td class="price">£5.75</td></tr>
+                <tr><td><b>Kopparberg Tropical</b></td><td class="alcohol">4.0%</td><td class="price">£5.75</td></tr>
+                <tr><td><b>Orchard Pig Truffler</b></td><td class="alcohol">6.0%</td><td class="price">£6.25</td></tr>   
+            </table>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 7: Pitchers -->
+            <table class="drink-table">
+                <tr><th>Pitchers</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Budweiser</b></td><td class="alcohol">4.3%</td><td class="price">£19.95</td></tr>
+                <tr><td><b>Stella Artois</b></td><td class="alcohol">4.8%</td><td class="price">£21.95</td></tr>
+                <tr><td><b>Magners</b></td><td class="alcohol">4.5%</td><td class="price">£21.95</td></tr>
+            </table>
+
+            <!-- Table 8: Bucket O Beers -->
+            <table class="drink-table">
+                <tr><th>Bucket O Beers</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>5 x Corona</b></td><td class="alcohol">4.5%</td><td class="price">£23.95</td></tr>
+                <tr><td><b>5 x Budweiser</b></td><td class="alcohol">4.8%</td><td class="price">£22.95</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-grid">
+             <!-- Table 9: Non Alcoholic Beer -->
+             <table class="drink-table">
+                <tr><th>Non Alcoholic Beer</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Corona Cero</b></td><td class="alcohol">0%</td><td class="price">£3.45</td></tr>
+            </table>
+        </div>
+
+        <!-- Section: Bourbon -->
+        <div class="section-header" style="margin-top: 80px;">
+            <div class="section-title-gold">Bourbon</div>
+            <div class="section-title-white">Bourbon</div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 10: Bourbon Left -->
+            <table class="drink-table">
+                <tr><th></th><th>Alc</th><th>Price</th></tr>
+                <tr>
+                    <td>
+                        <b>Wild Turkey 81</b>
+                        On the palate you get a spicy kick with almonds, honey and blackberries.
+                    </td>
+                    <td class="alcohol">40.5%</td>
+                    <td class="price">£3.95</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Wild Turkey 101</b>
+                        Rich with vanilla, caramel and notes of honey, brown sugar and tobacco.
+                    </td>
+                    <td class="alcohol">50.5%</td>
+                    <td class="price">£4.25</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Makers Mark</b>
+                        A light, spicy flavour with a hint of butterscotch and vanilla. Wonderfully smooth.
+                    </td>
+                    <td class="alcohol">45%</td>
+                    <td class="price">£4.50</td>
+                </tr>
+            </table>
+
+            <!-- Table 11: Bourbon Right -->
+            <table class="drink-table">
+                <tr><th></th><th>Alc</th><th>Price</th></tr>
+                <tr>
+                    <td>
+                        <b>Knob Creek</b>
+                        The aroma gives way to expansive notes of maple sugar, toasted nuts and oak finish.
+                    </td>
+                    <td class="alcohol">50%</td>
+                    <td class="price">£4.75</td>
+                </tr>
+                <tr>
+                    <td>
+                        <b>Bulleit</b>
+                        Kentucky limestone-filtered water is the base for the bourbon’s character, while charred American oak barrels lend a smoky backbone.
+                    </td>
+                    <td class="alcohol">45%</td>
+                    <td class="price">£3.95</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section: Whisky -->
+        <div class="section-header" style="margin-top: 80px;">
+            <div class="section-title-gold">Whisky</div>
+            <div class="section-title-white">Whisky</div>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 12: American -->
+            <table class="drink-table">
+                <tr><th>American</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Jack Daniel's Tennessee</b></td><td class="alcohol">40%</td><td class="price">£4.00</td></tr>
+                <tr><td><b>Jack Daniel's Tennessee Apple</b></td><td class="alcohol">35%</td><td class="price">£3.75</td></tr>
+                <tr><td><b>Jack Daniel's Tennessee Honey</b></td><td class="alcohol">35%</td><td class="price">£3.75</td></tr>
+                <tr><td><b>Jack Daniel's Tennessee Fire</b></td><td class="alcohol">35%</td><td class="price">£3.75</td></tr>
+                <tr><td><b>Jack Daniel's Single Barrel</b></td><td class="alcohol">45%</td><td class="price">£5.00</td></tr>
+                <tr><td><b>Jack Daniel's Bonded</b></td><td class="alcohol">50%</td><td class="price">£5.00</td></tr>
+            </table>
+
+            <!-- Table 13: Cognac -->
+            <table class="drink-table">
+                <tr><th>Cognac</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Martell VS ***</b></td><td class="alcohol">40%</td><td class="price">£4.25</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 14: Welsh -->
+            <table class="drink-table">
+                <tr><th>Welsh</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Penderyn Single Malt Madeira Cask</b></td><td class="alcohol">46%</td><td class="price">£4.50</td></tr>
+            </table>
+
+            <!-- Table 15: Tequila (Moved here for layout balance) -->
+            <table class="drink-table">
+                <tr><th>Tequila</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>El Jimador Blanco</b></td><td class="alcohol">38%</td><td class="price">£3.50</td></tr>
+                <tr><td><b>El Jimador Reposado</b></td><td class="alcohol">38%</td><td class="price">£3.75</td></tr>
+                <tr><td><b>Monte Alban Mezcal</b></td><td class="alcohol">40%</td><td class="price">£4.00</td></tr>
+                <tr><td><b>Patron Silver</b></td><td class="alcohol">40%</td><td class="price">£4.25</td></tr>
+                <tr><td><b>Patron Reposado</b></td><td class="alcohol">40%</td><td class="price">£4.50</td></tr>
+            </table>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Table 16: Irish -->
+            <table class="drink-table">
+                <tr><th>Irish</th><th>Alc</th><th>Price</th></tr>
+                <tr><td><b>Jameson</b></td><td class="alcohol">40%</td><td class="price">£4.10</td></tr>
+                <tr><td><b>Slane</b></td><td class="alcohol">40%</td><td class="price">£4.30</td></tr>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            
+            <!-- Left Side -->
+            <div class="footer-left">
+                <img src="348s-removebg-preview.png" class="footer-logo" alt="The Smoke Haus Logo">
+                <p class="slogan">#We salute you</p>
+                <div class="footer-nav">
+                    <a href="About.html">ABOUT</a>
+                    <a href="menu.html">MENU</a>
+                    <a href="Drink.html">DRINKS</a>
+                    <a href="offer.html">OFFERS</a>
+                    <a href="music.html">MUSIC</a>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="footer-right">
+                <div class="venue-info">Venues Cardiff</div>
+                <div class="social-icons">
+                    <a href="https://x.com/i/flow/login?lang=en" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/?locale2=en_GB&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="copyright">
+                <p>
+                    © The Smoke Haus 2025 
+                    <span class="privacy">Privacy Policy</span> 
+                    <span class="terms">Terms of use</span>
+                </p>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.5;">The Smoke Haus is a company registered in England and Wales. No. 13840375</p>
+                <a href="#" class="design-credit">Web Design Cardiff</a>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -3,314 +3,926 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="menu.css">
+    <title>Great American Barbecue Food in South Wales at The Smoke Haus</title>
+    
+    <!-- Google Fonts (Same as original) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- <link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet"> -->
-<link href="https://fonts.googleapis.com/css2?family=Eater&family=Rye&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Eater&family=Rye&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
-    <title>Greate American Barbecue Food in South Wales at The Smoke Haus</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eater&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Eater&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* --- Variables & Reset --- */
+        :root {
+            --gold-primary: rgb(179, 151, 82);
+            --gold-text: rgb(130, 105, 43);
+            --gold-bg: rgb(119, 96, 37);
+            --light-gold-bg: rgb(210, 181, 109);
+            --black-bg: #000000;
+            --text-white: #ffffff;
+            /* Fonts from original code */
+            --font-rye: "Rye", serif;
+            --font-finger: "Finger Paint", sans-serif;
+            --font-mono: monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--black-bg);
+            color: var(--text-white);
+            font-family: var(--font-mono); /* Body font is monospace */
+            line-height: 1.5;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- Header --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link {
+            font-family: var(--font-mono); /* Original: monospace */
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--text-white);
+            padding: 10px;
+        }
+
+        .nav-link:hover {
+            color: rgb(161, 124, 29);
+        }
+
+        .btn-book {
+            background: transparent;
+            border: none;
+            color: var(--text-white);
+            font-size: 17px;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+            font-weight: bold;
+            font-family: var(--font-mono);
+            transition: all 0.3s ease;
+        }
+
+        .btn-book:hover {
+            box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: rgb(161, 124, 29);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+        }
+
+        .hero-title {
+            position: absolute;
+            font-family: var(--font-rye); /* Original: Rye */
+            font-size: 80px;
+            color: var(--text-white);
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            z-index: 10;
+        }
+
+        /* --- Menu Nav Bar --- */
+        .sub-nav {
+            background-color: var(--gold-bg);
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .sub-nav a {
+            font-family: var(--font-rye); /* Original: Rye */
+            font-size: 25px;
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+        
+        .sub-nav a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 15px; /* Original offset */
+            color: rgb(79, 60, 13);
+        }
+
+        /* --- Main Menu Layout --- */
+        .menu-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styling */
+        .menu-section {
+            margin-bottom: 80px;
+        }
+
+        .section-image-wrapper {
+            position: relative;
+            width: 100%;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            background-color: #222;
+        }
+
+        .section-image-wrapper img {
+            width: 100%;
+            display: block;
+            height: 400px; /* Reduced height slightly for better mobile fit */
+            object-fit: cover;
+        }
+
+        /* Overlay Text on Image */
+        .text-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 30px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+            pointer-events: none;
+        }
+
+        .title-gold {
+            /* Original: Finger Paint */
+            font-family: var(--font-finger); 
+            font-size: 60px;
+            color: var(--gold-primary);
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .title-white {
+            /* Original: Rye */
+            font-family: var(--font-rye);
+            font-size: 45px; /* Adjusted for balance */
+            color: var(--text-white);
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        /* Intro Box */
+        .info-box {
+            background-color: var(--gold-text);
+            width: 100%;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-box p {
+            color: wheat;
+            font-family: var(--font-mono); /* Original: monospace */
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Menu List */
+        .menu-list {
+            display: block;
+        }
+
+        /* Menu Row with Dotted Border */
+        .menu-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            border-bottom: dotted 2px rgba(255, 255, 255, 0.6); /* Bright white dotted */
+            padding-bottom: 10px;
+            padding-top: 15px;
+            color: #ddd;
+            width: 100%;
+        }
+
+        .menu-name {
+            font-weight: bold;
+            padding-right: 20px;
+        }
+
+        .menu-price {
+            color: var(--gold-text);
+            font-weight: bold;
+            white-space: nowrap;
+            font-style: normal;
+        }
+
+        .menu-desc {
+            font-size: 16px;
+            color: var(--gold-text); /* Original: rgb(130, 105, 43) */
+            font-family: var(--font-mono); /* Original: monospace */
+            margin-bottom: 15px;
+            line-height: 1.4;
+            text-transform: uppercase;
+            word-spacing: -1px;
+        }
+
+        .item-container {
+            margin-bottom: 30px;
+        }
+
+        .item-title {
+            font-size: 18px;
+            color: #fff;
+            display: block;
+            margin-bottom: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: var(--font-mono);
+        }
+
+        /* Upgrade Box */
+        .upgrade-box {
+            background-color: var(--gold-bg);
+            border: 2px dashed #fff;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .upgrade-box.light {
+            background-color: var(--light-gold-bg);
+            color: black;
+        }
+
+        .upgrade-title {
+            font-family: var(--font-rye); /* Original: Rye */
+            font-size: 33px;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        
+        .upgrade-list {
+            font-size: 18px;
+            line-height: 1.6;
+            color: white;
+            font-family: var(--font-mono);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 60px 50px 30px 50px;
+            border-top: 1px solid #333;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-left { text-align: left; }
+        .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
+        
+        .footer-logo { width: 120px; margin-bottom: 20px; }
+        .slogan { 
+            font-family: var(--font-rye); /* Original: Rye */
+            font-size: 40px; 
+            color: var(--text-white); 
+            margin-bottom: 20px; 
+        }
+        .footer-nav { 
+            display: flex; 
+            gap: 20px; 
+            font-size: 15px; 
+            font-family: var(--font-mono);
+            flex-wrap: wrap; 
+            word-spacing: 6px;
+        }
+        .footer-nav a:hover { color: var(--gold-hover); }
+        .venue-info { 
+            text-transform: uppercase; 
+            font-size: 15px; 
+            font-family: var(--font-mono);
+            margin-bottom: 15px; 
+        }
+        .venue-info:hover { color: var(--gold-hover); cursor: pointer; }
+        .social-icons { margin-top: 10px; display: flex; gap: 20px; font-size: 20px; }
+        .social-icons a { color: rgb(176, 142, 58); }
+        .social-icons a:hover { color: rgb(161, 124, 29); }
+        
+        .copyright {
+            grid-column: 1 / -1; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; font-size: 14px; opacity: 0.7;
+            font-family: var(--font-mono);
+        }
+        .copyright span { margin: 0 10px; cursor: pointer; }
+        .copyright span:hover { color: var(--gold-hover); }
+        .design-credit { display: block; margin-top: 10px; font-size: 14px; cursor: pointer; }
+        .design-credit:hover { color: var(--gold-hover); }
+
+        /* --- Media Queries --- */
+        @media (max-width: 900px) {
+            header { flex-direction: column; padding: 15px; }
+            .nav-menu { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero-title { font-size: 50px; }
+            .sub-nav { gap: 20px; }
+            .sub-nav a { font-size: 18px; }
+            .title-gold { font-size: 40px; }
+            .title-white { font-size: 30px; }
+            .section-image-wrapper img { height: 300px; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-right { align-items: center; text-align: center; margin-top: 30px; }
+            .footer-nav { justify-content: center; margin-top: 20px; }
+            .social-icons { justify-content: center; }
+            .menu-row { flex-direction: column; }
+            .menu-name { margin-bottom: 5px; }
+            .title-gold { font-size: 35px; }
+            .title-white { font-size: 25px; }
+            .section-image-wrapper img { height: 250px; }
+        }
+    </style>
 </head>
 <body>
-    <img src="348s-removebg-preview.png" class="img3">
-    <div class="div1">
-        <b class="b"><a href="about.html" class="b1">ABOUT</a></b>
-        <b class="b"><a href="menu.html" class="b2">MENU</a></b>
-        <b class="b" ><a href="drinks.html" class="b3">DRINKS</a></b>
-        <b class="b"><a href="menu.html" class="b4">OFFERS</a></b>
-        <b class="b"><a href="music.html" class="b5">MUSIC</a></b>
-        <b class="Box"><b class="box"><a href="booking.html" class="A">BOOK ONLINE</a></b></b>
-    </div>  
-    <img src="juicy-chicken-burger-with-fresh-lettuce-crispy-french-fries-wooden-board.jpg" class="Imgg">
-       <div class="div">
-        <p class="para">MENU</p>
-       </div>
-       <div class="div3">
-        <u class="u1"><b class="bold1" >MAIN MENU</b></u>
-        <u class="u2"><b class="bold2"><a href="offer.html" class="off">OFFERS</a></b></u>
-       </div>
-       <div class="division">
-        <p class="para1">ALL OF OUR DISHES ARE FRESHLY PREPARED, PLEASE ASK YOUR SERVER IF YOU WANT TO TAILOR ANY DISH<br><b class="bold3">TO YOUR LIKING.</b><br>
-            <b class="bold4">(V) VEGETARIAN | (VG) VEGAN | (GF) GLUTEN FREE</b></p>
-       </div>
-       <img src="Chicken wings.jpg" class="imgg1">
-       <div class="Para2"><p class="Paraa2">Our Famous Epic <br><b class="bolds4">Chicken Wings</b></p><p class="para2">Our Famous Epic Chicken <br><b class="bold4">Wings</b></p></div>
-       <div class="part">
-       <u class="u3">4 WINGS (GF)	<i class="i1">£9.95</i></u>
-        <u class="u4">8 WINGS (GF)  <i class="i2">	£16.95</i> </u>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="348s-removebg-preview.png" alt="The Smoke Haus Logo">
         </div>
-        <img src="Appetisers.jpg" class="imgg2">
-        <div class="APP">Appet <br><b class="B3">isers</b></div><div class="APP1">Appetisers</div>
-        <p class="para3">Choose from Plain / Sticky BBQ / Buffalo / Spicy Rub / Maple and Mustard. / Sticky Teriyaki<br>
-           <b class="bold5">All served with a blue cheese dip and celery sticks. (GF)</b></p>
-           <table class="table">
-           <tr><td><b class="B">NACHOS (V)</b><br>
-           Crispy nachos topped with salsa, cheese sauce,<br> jalapeños, tomato, spring onion, guacamole & sour<br> cream.  </td>         
-          <td><i class="i"> £ 7.45</i></td></tr> <br>
-           <tr><td><b class="B">PORK NACHOS</b><br>
-           Pulled pork smothered over crispy nachos,topped with <br> cheese sauce, jalapeños, tomato,spring onion, <br> guacamole & sour cream.</td>         
-           <td><i class="i">£ 8.95</i></td></tr>
-           <tr><td><b class="B">CHILLI NACHOS</b><br>
-           Crispy nachos topped with beef chilli, cheese sauce, <br> jalapeños, spring onion, tomato, guacamole & sour <br> cream.</td>          
-          <td><i class="i">£ 8.95</i></td></tr>
-          </table>
-          <table class="table1">
-           <tr><td><b class="B">BUFFALO CHICKEN TENDERS</b> <br>
-           Crispy Chicken Tenders coated in buffalo sauce, lettuce, <br> tomato, spring onion & blue cheese sauce.</td>
-           <td><i class="i">£9.95</i></td></tr>
-           <tr><td><b class="B">MAC N CHEESE BITES (V)</b> <br>
-           Deep fried mac n cheese bites, cheese sauce, lettuce, <br> tomato, spring onion & sweet chilli.</td>
-          <td><i class="i">£7.95</i></td></tr>
-           <tr><td><b class="B">TATER TOTS (V)</b> <br>
-           Tater tots topped with salsa, cheese sauce, jalapeños, <br> tomato, spring onion, guacamole & sour cream.</td>
-           <td><i class="i">£8.45</i></td></tr>
-           </table>
-           <img src="Appetisers.jpg" class="imgg3">
-           <div class="Sha1">Sha<br><b class="B4">rers</b></div><div class="Sha">Sharers</div>
-           <table class="table2">
-           <tr><td><b class="B">Classic Platter</b><br>
-A bowl of nachos, onion rings, mac n cheese bites, <br> chicken wings & popcorn chicken. Accompanied with <br> dips.</td>
-<td><i class="i">£ 18.95</i></td></tr></table>
-<table class="table3">
-<tr><td><b class="B"> Chicken Platter</b><br>
-Wings, tenders, popcorn chicken and crispy shredded <br>chicken strips, served with dips.</td>
-<td><i class="i">£ 19.95</i></td></tr>
-           </table>
-           <img src="The Burger.jpg" class="imgg5">
-           <div class="The1">The <br><b class="B5">Burgers</b></div><div class="The">The Burgers</div>
-           <table class="table4">
-            <tr><td><b class="B">THE CLASSIC BURGER</b><br>
-Our own recipe double cheeseburger, griddled <br> and served in a sweet brioche roll.</td>
-<td><i class="i">£15.95</i></td></tr>
-<tr><td><b class="B">BABY BERTHA</b><br>
-Double cheeseburger, smoked streaky bacon, <br> jalapeños, sweet fried onions & burger sauce</td>
-<td><i class="i">£18.45</i></td></tr>
-<tr><td><b class="B">THE ULTIMATE CHEESE BURGER</b><br>
-Double cheeseburger, mac & cheese bites, <br> cheese sauce, bacon & onion sprinkles.</td>
-<td><i class="i">£19.45</i></td></tr>
-<tr><td><b class="B">SOUTHERN COMFORT</b><br>
-Double cheeseburger, crispy chicken tenders, <br> bacon, fried onions & garlic mayonnaise.</td>
-<td><i class="i">£20.95</i></td></tr>
-<tr><td><b class="B">THE HOG FATHER</b><br>
-Double cheeseburger, BBQ pulled pork & smoked <br> streaky bacon.</td>
-<td><i class="i">£19.95</i></td></tr>
-<tr><td><b class="B">CHIPPY ALLEY</b><br>
-Double cheeseburger, fries topped with chicken <br> off the bone & curry sauce</td>
-<td><i class="i">£18.45</i></td></tr>
-<tr><td><b class="B">HEY GRINGO!</b><br>
-Double cheeseburger, crispy cajun chicken, <br> peppers and onions, chipotle sauce.</td>
-<td><i class="i">£18.95</i></td></tr>
-    </table>
-    <table class="table5">
-<tr><td><b class="B">GARBAGE BURGER</b><br>
-Four cheeseburgers, brisket, chilli, onions, <br> Roquito peppers & chipotle sauce.</td>
-<td><i class="i">£29.95</i></td></tr>
-<tr><td><b class="B">THE GREEN MACHINE (V) (VG)</b><br>
-A lightly spiced burger of broad beans, peas and <br> spinach, topped with BBQ pulled soya, lettuce & <br> tomato. Served with vegan slaw.</td>
-<td><i class="i">£17.95</i></td></tr>
-<tr><td><b class="B">THE HEARTATTACK BURGER</b><br>
-Double cheeseburger, mini hash browns, bacon, <br> BBQ sauce, cheese sauce & onion rings.</td>
-<td><i class="i">£22.95</i></td></tr>
-<tr><td><b class="B">NEW ORLEANS BURGER</b><br>
-Double cheeseburger, sweet fried onions, brisket, <br> chipotle sauce & a sliced pickle.</td>
-<td><i class="i">£23.95</i></td></tr>
-     </table>
-     <div class="division2">
-        <b class="bold6">UPGRATES</b>
-        <b class="bold9">
-        <b class="bold7">Americon Cheese +1.50 jalapenos +1.50 Roquito Peppers +1.50</b><br>
-        <b class="bold8">Sweet Fried Onions +1.50 Smoked Bacon +1.50 Homemade Chilli +3.00</b></b>
-     </div>
-     <img src="From The Pit.jpg" class="imgg6">
-     <div class="From1">From <br><b class="B6">The Pit</b></div><div class="From">From The Pit</div>
-     <table class="table6">
-        <tr><td><b class="B">PLATE A (GF)</b><br>
-Brisket, pulled pork, BBQ beans, chimmichuri, <br> coleslaw, pickles & fries.</td>
-<td><i class="i">£29.95</i></td></tr>
-<tr><td><b class="B">PLATE B (GF)</b><br>
-Brisket, pulled pork, half a rack of BBQ ribs, 2 <br> chicken wings, BBQ beans, chimmichuri, <br> coleslaw, pickles & fries.</td>
-<td><i class="i">£39.95</i></td></tr>
-</table>
-<table class="table7">
-<tr><td><b class="B">HALF RACK OF BABY BACK RIBS (GF)</b><br>
-Served with BBQ beans, skin on fries & coleslaw</td>
-<td><i class="i">£19.95</i></td></tr>
-<tr><td><b class="B">FULL RACK OF BABY BACK RIBS (GF)</b><br>
-Served with BBQ beans, skin on fries & coleslaw.</td>
-<td><i class="i">£25.95</i></td></tr>
-     </table>
-     <p class="para4">All meals come with skin-on fries & slaw</p>
-     <img src="Mixed Grill.jpg" class="imgg7">
-     <div class="Gri1">Mixed<br><b class="B7">Grill</b></div><div class="Gri">Mixed Grill</div>
-     <table class="table8">
-        <tr><td><b class="B">The Legendary Mixed Grill</b><br>
-Smoked brisket, pulled pork, 4 chicken wings,<br> served with a double cheeseburger, baby back <br> ribs, BBQ beans, chimichurri, a large portion of <br> our own skin-on fries & slaw.<br>
-<b class="B">CHOOSE YOUR WINGS</b><br>
-Plain / Sticky BBQ / Buffalo / Spicy Rub / Maple <br> & Mustard / Sticky Teriyaki</td>
-<td><i class="i">£59.95</i></td></tr>
-</table>
-<table class="table9">
-<tr><td><b class="B">* UPGRADE YOUR FRIES *	</b></td>
-<td class="td">Haus spiced <i class="i">+ £2.00</i><br>
-Sweet potato <i class="i4">+ £3.00</i><br>
-Cheesy <i class="i5">+ £3.00</i><br>
-Chilli <i class="i6">+ £3.00</i><br>
-Cheesy chilli <i class="i">+ £4.00</i><br>
-Chicken curry <i class="i7">+ £5.00</i></td></tr>
-     </table>
-     <p class="para5">Great to share... But also a huge challenge for one!</p>
-     <img src="Chicken.jpg" class="imgg8">
-     <div class="Chi1">Chic<br><b class="B8">ken</b></div><div class="Chi">Chicken</div>
-     <table class="table10">
-        <tr><td><b class="B">KANSAS CHICKEN</b><br>
-Chicken breast fried in our own herbs and spices, <br> served with ranch dressing, fries & slaw.</td>
-<td><i class="i">£18.95</i></td></tr>
-<tr><td><b class="B">BUFFALO BLUE CHEESE CHICKEN BURGER</b><br>
-Kansas chicken breast coated in buffalo sauce, <br> melted cheese, lettuce, tomato & blue cheese <br> sauce, served with fries & slaw.</td>
-<td><i class="i">£19.95</i></td></tr>
-</table>
-<table class="table11">
-<tr><td><b class="B">LOUISIANA CHICKEN BURGER</b><br>
-Kansas chicken breast, bacon, cheese & BBQ <br> sauce, served with fries & slaw.</td>
-<td><i class="i">£21.95</i></td></tr>
-<tr><td><b class="B">CHICKEN CAESAR SALAD</b><br>
-Crispy chicken tenders, lettuce, croutons, <br> parmesan and classic caesar dressing.</td>
-<td><i class="i">£17.95</i></td></tr>
-     </table>
-     <img src="Sides.jpg" class="imgg9">
-     <div class="Sid1">Sides</div><div class="Sid">Sides</div>
-     <table class="table12">
-<tr><td><b class="B">SKIN-ON FRIES (V) (VG) (GF)</b></td>	
-    <td><i class="I">£4.45</i></td></tr>
-<tr><td><b class="B">SWEET POTATO FRIES (V) (VG) (GF)</b></td>	
-    <td><i class="I">£5.45</i></td></tr>
-<tr><td><b class="B">ONION RINGS (V)	</b></td>
-    <td><i class="I">£6.45</i></td></tr>
-</table>
-<table class="table13">
-<tr><td><b class="B">SLAW (V) (GF)	</b></td>
-    <td><i class="I">£4.45</i></td></tr>
-<tr><td><b class="B">SIDE SALAD (V) (VG) (GF)</b></td>	
-    <td><i class="I">£4.45</i></td></tr>
-<tr><td><b class="B">TEXAS TOAST (V)</b><br>
-With cheese +£1.50</td>
-<td><i class="I">£4.95</i></td></tr>
-<tr><td><b class="B">BBQ BEANS (V) (GF)	</b></td>
-    <td><i class="I">£5.95</i></td></tr>
-     </table>
-     <img src="Loaded Fries.jpg" class="imgg10">
-     <div class="Loa1">Loaded <br><b class="B9"> Fries</b></div><div class="Loa">Loaded Fries</div>
-     <table class="table14">
-        <tr><td><b class="B">BRISKET FRIES</b><br>
-Spiced fries topped with brisket, chimichurri & <br> spring onions.</td>
-<td><i class="i">£8.95</i></td></tr>
-<tr><td><b class="B">BUFFALO CHICKEN FRIES</b><br>
-Spiced fries mixed with crispy chicken strips, <br> coated in buffalo sauce with tomato, spring onion <br> & blue cheese sauce.</td>
-<td><i class="i">£8.95</i></td></tr>
-</table>
-<table class="table15">
-<tr><td><b class="B">CHEESE & ONION FRIES (V)</b><br>
-Topped with fried onions, crispy onions, spring <br> onions & cheese sauce.</td>
-<td><i class="i">£7.95</i></td></tr>
-     </table>
-     <div class="division3">
-        <b class="bold10">FRIES UPGRATES</b>
-        <b class="bold11">
-        <b class="bold12">Haus spiced fries +1.00 Sweet potato fries +2.00 cheese fries +2.00</b><br>
-        <b class="bold13"> Chilli fries +2.00 Cheese chilli fries +3.00 Chicken curry +3.50</b></b>
-     </div>
-     <img src="LITTLE PLATES.jpg" class="imgg11">
-     <div class="Lit1">LITTLE <br> PLATES</div><div class="Lit">LITTLE PLATES</div>
-     <table class="table16">
-        <tr><td><b class="B">LITTLE HAUS BURGER & FRIES	</b></td>
-            <td><i class="I">£4.95</i></td></tr>
-<tr><td><b class="B">POPCORN CHICKEN & FRIES</b></td>
-    <td><i class="I">£4.95</i></td></tr>
-<tr><td><b class="B">HOT DOG & FRIES</b></td>
-    <td><i class="I">£4.95</i></td></tr>
-<tr><td><b class="B">VEGAN DOG & FRIES (VG)	</b></td>
-    <td><i class="I">£4.95</i></td></tr>
-    </table>
-    <table class="table17">
-<tr><td><b class="B">DOUGHNUT WITH CHOCOLATE SAUCE AND <br> VANILLA ICE CREAM</b></td>
-    <td><i class="i">£1.50</i></td></tr>
-<tr><td><b class="B">ICE CREAM ASK YOUR SERVER FOR TODAY’S <br> FLAVOURS!</b></td>
-    <td><i class="i">£1.50</i></td></tr>
-<tr><td><b class="B">DRINKS FROM</b></td>
-    <td><i class="i">£1.50</i></td></tr>
-     </table>
-     <img src="Sweets and Sundaes.jpg" class="imgg12">
-     <div class="Swe1">Sweets</div><div class="Swe">Sweets and Sundaes</div>
-     <table class="table18">
-        <tr><td><b class="B">APPLE PIE</b><br>
-Served with whipped cream and toffee sauce.</td>
-<td><i class="i">£8.45</i></td></tr>
-<tr><td><b class="B">WARM BROWNIE (VG)</b><br>
-Served with vanilla ice cream and chocolate sauce.</td>
-<td><i class="i">£8.45</i></td></tr>
-</table>
-<table class="table19">
-<tr><td><b class="B">MISSISSIPPI MUD PIE</b><br>
-Served with whipped cream and chocolate sauce.</td>
-<td><i class="i">£8.45</i></td></tr>
-<tr><td><b class="B">ICE CREAM FLAVOURS</b><br>
-Vanilla (VG) / Chocolate (VG) / Banana / <br> Bubblegum / Strawberry.</td>
-<td><i class="i">£8.45</i></td></tr>
-<tr><td><b class="B">SORBET</b><br>
-Strawberry / Lemon.</td>
-<td><i class="i">£6.95</i></td></tr>
-</table>
-<table class="table20">
-<tr><td><b class="B">TEA</b><br>
-English Tea / Peppermint Tea / Green Tea / Fruit <br> Tea</td>
-<td><i class="i">£2.95</i></td></tr>
-<tr><td><b class="B">CAPPUCCINO	</b></td>
-    <td><i class="i">£4.75</i></td></tr>
-<tr><td><b class="B">LATTE	</b></td>
-    <td><i class="i">£4.75</i></td></tr>
-<tr><td><b class="B">AMERICANO	</b></td>
-    <td><i class="i">£4.25</i></td></tr>
-</table>
-<table class="table21">
-<tr><td><b class="B">MOCHA	</b></td>
-    <td><i class="i">£4.95</i></td></tr>
-<tr><td><b class="B">ESPRESSO	</b></td>
-    <td><i class="i">£3.45</i></td></tr>
-<tr><td><b class="B">DOUBLE ESPRESSO	</b></td>
-    <td><i class="i">£3.95</i></td></tr>
-<tr><td><b class="B">HOT CHOCOLATE	</b></td>
-    <td><i class="i">£4.95</i></td></tr>
-</table>
-<div class="division4">
-    <p class="para6">Food allergies & intolerances: Before ordering please speak to our staff about your requirements.<br>
-        <u class="u5">Please click here for further information on allergens.</u><br>
-        All weights are approximate uncooked weights that may reduce during the cooking process.</p>
-</div>
-<p class="Dort">.</p>
-<img src="348s-removebg-preview.png" class="img">
-    <p class="para7">
-        #We salute you
-    </p>
-    <div class="div2">
-        <b><a href="about.html" class="a1">ABOUT</a></b>
-        <b><a href="menu.html" class="a2">MENU</a></b>
-        <b><a href="drinks.html" class="a3">DRINKS</a></b>
-        <b><a href="offer.html" class="a4">OFFERS</a></b>
-        <b><a href="music.html" class="a5">MUSIC</a></b>
+        <nav class="nav-menu">
+            <a href="About.html" class="nav-link">ABOUT</a>
+            <a href="menu.html" class="nav-link">MENU</a>
+            <a href="Drink.html" class="nav-link">DRINKS</a>
+            <a href="offer.html" class="nav-link">OFFERS</a>
+            <a href="music.html" class="nav-link">MUSIC</a>
+            <a href="booking.html" class="btn-book">BOOK ONLINE</a>
+        </nav>
+    </header>
+
+    <!-- Hero Image & Title -->
+    <section class="hero">
+        <img src="juicy-chicken-burger-with-fresh-lettuce-crispy-french-fries-wooden-board.jpg" class="hero-img" alt="Menu Hero">
+        <h1 class="hero-title">MENU</h1>
+    </section>
+
+    <!-- Sub Nav -->
+    <div class="sub-nav">
+        <a href="#">MAIN MENU</a>
+        <a href="offer.html">OFFERS</a>
     </div>
-    <img src="Untitled2-removebg-preview.png" alt="" class="img2">
-    <div class="A2">
-        <b class="b6">Cardiff</b><br>
-    <a href="https://x.com/i/flow/login?lang=en" class="A1"><i class="fa-brands fa-twitter icon7"></i></a>
-    <a href="https://www.instagram.com/accounts/login/?hl=en" class="A4"><i class="fa-brands fa-instagram icon9"></i></a>
-    <a href="https://www.facebook.com/?locale2=en_GB&_rdr" class="A3"><i class="fa-brands fa-facebook icon8"></i></a>
-    </div>
-    <p class="para8">
-        © The Smoke Haus 2025 <b class="B1">Privacy Policy </b><b class="B2">Terms of use</b><br>
-The Smoke Haus is a company registered in England and Wales. No. 13840375
-<b class="bold">Web Design Cardiff</b>
-    </p>
+
+    <!-- Main Content -->
+    <main class="menu-container">
+
+        <!-- Intro Box -->
+        <div class="info-box">
+            <p>
+                ALL OF OUR DISHES ARE FRESHLY PREPARED, PLEASE ASK YOUR SERVER IF YOU WANT TO TAILOR ANY DISH<br>
+                <span style="margin-left: 10px;">TO YOUR LIKING.</span><br>
+                (V) VEGETARIAN | (VG) VEGAN | (GF) GLUTEN FREE
+            </p>
+        </div>
+
+        <!-- Chicken Wings -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Chicken wings.jpg" alt="Chicken Wings">
+                <div class="text-overlay">
+                    <div class="title-gold">Our Famous Epic</div>
+                    <div class="title-white">Chicken Wings</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="menu-row">
+                    <div class="menu-name">4 WINGS (GF)</div>
+                    <div class="menu-price">£9.95</div>
+                </div>
+                <div class="menu-row">
+                    <div class="menu-name">8 WINGS (GF)</div>
+                    <div class="menu-price">£16.95</div>
+                </div>
+            </div>
+            <p class="menu-desc" style="text-align: center; margin-top: 15px;">
+                Choose from Plain / Sticky BBQ / Buffalo / Spicy Rub / Maple and Mustard / Sticky Teriyaki<br>
+                All served with a blue cheese dip and celery sticks. (GF)
+            </p>
+        </section>
+
+        <!-- Appetisers -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Appetisers.jpg" alt="Appetisers">
+                <div class="text-overlay">
+                    <div class="title-gold">Appet</div>
+                    <div class="title-white">isers</div>
+                </div>
+            </div>
+            
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">NACHOS (V)</span>
+                    <p class="menu-desc">Crispy nachos topped with salsa, cheese sauce, jalapeños, tomato, spring onion, guacamole & sour cream.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£7.45</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <span class="item-title">PORK NACHOS</span>
+                    <p class="menu-desc">Pulled pork smothered over crispy nachos, topped with cheese sauce, jalapeños, tomato, spring onion, guacamole & sour cream.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£8.95</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <span class="item-title">CHILLI NACHOS</span>
+                    <p class="menu-desc">Crispy nachos topped with beef chilli, cheese sauce, jalapeños, spring onion, tomato, guacamole & sour cream.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£8.95</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <span class="item-title">BUFFALO CHICKEN TENDERS</span>
+                    <p class="menu-desc">Crispy Chicken Tenders coated in buffalo sauce, lettuce, tomato, spring onion & blue cheese sauce.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£9.95</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <span class="item-title">MAC N CHEESE BITES (V)</span>
+                    <p class="menu-desc">Deep fried mac n cheese bites, cheese sauce, lettuce, tomato, spring onion & sweet chilli.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£7.95</div>
+                    </div>
+                </div>
+
+                <div class="item-container">
+                    <span class="item-title">TATER TOTS (V)</span>
+                    <p class="menu-desc">Tater tots topped with salsa, cheese sauce, jalapeños, tomato, spring onion, guacamole & sour cream.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£8.45</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sharers -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Appetisers.jpg" alt="Sharers">
+                <div class="text-overlay">
+                    <div class="title-gold">Shar</div>
+                    <div class="title-white">ers</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">Classic Platter</span>
+                    <p class="menu-desc">A bowl of nachos, onion rings, mac n cheese bites, chicken wings & popcorn chicken. Accompanied with dips.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£18.95</div>
+                    </div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">Chicken Platter</span>
+                    <p class="menu-desc">Wings, tenders, popcorn chicken and crispy shredded chicken strips, served with dips.</p>
+                    <div class="menu-row">
+                        <div></div> <div class="menu-price">£19.95</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Burgers -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="The Burger.jpg" alt="The Burgers">
+                <div class="text-overlay">
+                    <div class="title-gold">The</div>
+                    <div class="title-white">Burgers</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">THE CLASSIC BURGER</span>
+                    <p class="menu-desc">Our own recipe double cheeseburger, griddled and served in a sweet brioche roll.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£15.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">BABY BERTHA</span>
+                    <p class="menu-desc">Double cheeseburger, smoked streaky bacon, jalapeños, sweet fried onions & burger sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£18.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">THE ULTIMATE CHEESE BURGER</span>
+                    <p class="menu-desc">Double cheeseburger, mac & cheese bites, cheese sauce, bacon & onion sprinkles.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£19.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">SOUTHERN COMFORT</span>
+                    <p class="menu-desc">Double cheeseburger, crispy chicken tenders, bacon, fried onions & garlic mayonnaise.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£20.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">THE HOG FATHER</span>
+                    <p class="menu-desc">Double cheeseburger, BBQ pulled pork & smoked streaky bacon.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£19.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">CHIPPY ALLEY</span>
+                    <p class="menu-desc">Double cheeseburger, fries topped with chicken off the bone & curry sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£18.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">HEY GRINGO!</span>
+                    <p class="menu-desc">Double cheeseburger, crispy cajun chicken, peppers and onions, chipotle sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£18.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">GARBAGE BURGER</span>
+                    <p class="menu-desc">Four cheeseburgers, brisket, chilli, onions, Roquito peppers & chipotle sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£29.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">THE GREEN MACHINE (V) (VG)</span>
+                    <p class="menu-desc">A lightly spiced burger of broad beans, peas and spinach, topped with BBQ pulled soya, lettuce & tomato. Served with vegan slaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£17.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">THE HEARTATTACK BURGER</span>
+                    <p class="menu-desc">Double cheeseburger, mini hash browns, bacon, BBQ sauce, cheese sauce & onion rings.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£22.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">NEW ORLEANS BURGER</span>
+                    <p class="menu-desc">Double cheeseburger, sweet fried onions, brisket, chipotle sauce & a sliced pickle.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£23.95</div></div>
+                </div>
+            </div>
+
+            <!-- Upgrades Box -->
+            <div class="upgrade-box">
+                <div class="upgrade-title">UPGRATES</div>
+                <div class="upgrade-list">
+                    <p>American Cheese +1.50 Jalapenos +1.50 Roquito Peppers +1.50</p>
+                    <p>Sweet Fried Onions +1.50 Smoked Bacon +1.50 Homemade Chilli +3.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- From The Pit -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="From The Pit.jpg" alt="From The Pit">
+                <div class="text-overlay">
+                    <div class="title-gold">From</div>
+                    <div class="title-white">The Pit</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">PLATE A (GF)</span>
+                    <p class="menu-desc">Brisket, pulled pork, BBQ beans, chimmichuri, coleslaw, pickles & fries.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£29.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">PLATE B (GF)</span>
+                    <p class="menu-desc">Brisket, pulled pork, half a rack of BBQ ribs, 2 chicken wings, BBQ beans, chimmichuri, coleslaw, pickles & fries.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£39.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">HALF RACK OF BABY BACK RIBS (GF)</span>
+                    <p class="menu-desc">Served with BBQ beans, skin on fries & coleslaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£19.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">FULL RACK OF BABY BACK RIBS (GF)</span>
+                    <p class="menu-desc">Served with BBQ beans, skin on fries & coleslaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£25.95</div></div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--gold-text); font-weight: bold; margin-top: 10px; font-family: var(--font-mono);">All meals come with skin-on fries & slaw</p>
+        </section>
+
+        <!-- Mixed Grill -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Mixed Grill.jpg" alt="Mixed Grill">
+                <div class="text-overlay">
+                    <div class="title-gold">Mixed</div>
+                    <div class="title-white">Grill</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">The Legendary Mixed Grill</span>
+                    <p class="menu-desc">Smoked brisket, pulled pork, 4 chicken wings, served with a double cheeseburger, baby back ribs, BBQ beans, chimichurri, a large portion of our own skin-on fries & slaw.</p>
+                    <p style="color:white; font-weight:bold; margin-top:5px; font-family: var(--font-mono);">CHOOSE YOUR WINGS: Plain / Sticky BBQ / Buffalo / Spicy Rub / Maple & Mustard / Sticky Teriyaki</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£59.95</div></div>
+                </div>
+            </div>
+            
+            <!-- Upgrade Fries List -->
+            <div style="margin-top: 20px; font-family: var(--font-mono);">
+                <div class="upgrade-title" style="font-size: 20px; margin-bottom: 10px;">* UPGRADE YOUR FRIES *</div>
+                <div class="menu-row">
+                    <span>Haus spiced</span> <span>+ £2.00</span>
+                </div>
+                <div class="menu-row">
+                    <span>Sweet potato</span> <span>+ £3.00</span>
+                </div>
+                <div class="menu-row">
+                    <span>Cheesy</span> <span>+ £3.00</span>
+                </div>
+                <div class="menu-row">
+                    <span>Chilli</span> <span>+ £3.00</span>
+                </div>
+                <div class="menu-row">
+                    <span>Cheesy chilli</span> <span>+ £4.00</span>
+                </div>
+                <div class="menu-row">
+                    <span>Chicken curry</span> <span>+ £5.00</span>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--gold-text); font-weight: bold; margin-top: 15px; font-family: var(--font-mono);">Great to share... But also a huge challenge for one!</p>
+        </section>
+
+        <!-- Chicken -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Chicken.jpg" alt="Chicken">
+                <div class="text-overlay">
+                    <div class="title-gold">Chic</div>
+                    <div class="title-white">ken</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">KANSAS CHICKEN</span>
+                    <p class="menu-desc">Chicken breast fried in our own herbs and spices, served with ranch dressing, fries & slaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£18.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">BUFFALO BLUE CHEESE CHICKEN BURGER</span>
+                    <p class="menu-desc">Kansas chicken breast coated in buffalo sauce, melted cheese, lettuce, tomato & blue cheese sauce, served with fries & slaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£19.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">LOUISIANA CHICKEN BURGER</span>
+                    <p class="menu-desc">Kansas chicken breast, bacon, cheese & BBQ sauce, served with fries & slaw.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£21.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">CHICKEN CAESAR SALAD</span>
+                    <p class="menu-desc">Crispy chicken tenders, lettuce, croutons, parmesan and classic caesar dressing.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£17.95</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sides -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Sides.jpg" alt="Sides">
+                <div class="text-overlay">
+                    <div class="title-gold">Sides</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="menu-row"><span>SKIN-ON FRIES (V) (VG) (GF)</span> <span class="menu-price">£4.45</span></div>
+                <div class="menu-row"><span>SWEET POTATO FRIES (V) (VG) (GF)</span> <span class="menu-price">£5.45</span></div>
+                <div class="menu-row"><span>ONION RINGS (V)</span> <span class="menu-price">£6.45</span></div>
+                <div class="menu-row"><span>SLAW (V) (GF)</span> <span class="menu-price">£4.45</span></div>
+                <div class="menu-row"><span>SIDE SALAD (V) (VG) (GF)</span> <span class="menu-price">£4.45</span></div>
+                <div class="menu-row"><span>TEXAS TOAST (V)</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row" style="font-size: 0.9em; color: #aaa;"><span>With cheese +£1.50</span></div>
+                <div class="menu-row"><span>BBQ BEANS (V) (GF)</span> <span class="menu-price">£5.95</span></div>
+            </div>
+        </section>
+
+        <!-- Loaded Fries -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Loaded Fries.jpg" alt="Loaded Fries">
+                <div class="text-overlay">
+                    <div class="title-gold">Loaded</div>
+                    <div class="title-white">Fries</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">BRISKET FRIES</span>
+                    <p class="menu-desc">Spiced fries topped with brisket, chimichurri & spring onions.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">BUFFALO CHICKEN FRIES</span>
+                    <p class="menu-desc">Spiced fries mixed with crispy chicken strips, coated in buffalo sauce with tomato, spring onion & blue cheese sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.95</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">CHEESE & ONION FRIES (V)</span>
+                    <p class="menu-desc">Topped with fried onions, crispy onions, spring onions & cheese sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£7.95</div></div>
+                </div>
+            </div>
+            
+            <!-- Fries Upgrades Box -->
+            <div class="upgrade-box light">
+                <div class="upgrade-title" style="color: black;">FRIES UPGRATES</div>
+                <div class="upgrade-list" style="color: black;">
+                    <p>Haus spiced fries +1.00 Sweet potato fries +2.00 cheese fries +2.00</p>
+                    <p>Chilli fries +2.00 Cheese chilli fries +3.00 Chicken curry +3.50</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Little Plates -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="LITTLE PLATES.jpg" alt="Little Plates">
+                <div class="text-overlay">
+                    <div class="title-gold">LITTLE</div>
+                    <div class="title-white">PLATES</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="menu-row"><span>LITTLE HAUS BURGER & FRIES</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row"><span>POPCORN CHICKEN & FRIES</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row"><span>HOT DOG & FRIES</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row"><span>VEGAN DOG & FRIES (VG)</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row"><span>DOUGHNUT WITH CHOCOLATE SAUCE AND VANILLA ICE CREAM</span> <span class="menu-price">£1.50</span></div>
+                <div class="menu-row"><span>ICE CREAM ASK YOUR SERVER FOR TODAY'S FLAVOURS!</span> <span class="menu-price">£1.50</span></div>
+                <div class="menu-row"><span>DRINKS FROM</span> <span class="menu-price">£1.50</span></div>
+            </div>
+        </section>
+
+        <!-- Sweets and Sundaes -->
+        <section class="menu-section">
+            <div class="section-image-wrapper">
+                <img src="Sweets and Sundaes.jpg" alt="Sweets">
+                <div class="text-overlay">
+                    <div class="title-gold">Sweets</div>
+                </div>
+            </div>
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">APPLE PIE</span>
+                    <p class="menu-desc">Served with whipped cream and toffee sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">WARM BROWNIE (VG)</span>
+                    <p class="menu-desc">Served with vanilla ice cream and chocolate sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">MISSISSIPPI MUD PIE</span>
+                    <p class="menu-desc">Served with whipped cream and chocolate sauce.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">ICE CREAM FLAVOURS</span>
+                    <p class="menu-desc">Vanilla (VG) / Chocolate (VG) / Banana / Bubblegum / Strawberry.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£8.45</div></div>
+                </div>
+                <div class="item-container">
+                    <span class="item-title">SORBET</span>
+                    <p class="menu-desc">Strawberry / Lemon.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£6.95</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot Drinks -->
+        <section class="menu-section">
+            <div class="menu-list">
+                <div class="item-container">
+                    <span class="item-title">TEA</span>
+                    <p class="menu-desc">English Tea / Peppermint Tea / Green Tea / Fruit Tea.</p>
+                    <div class="menu-row"><div></div> <div class="menu-price">£2.95</div></div>
+                </div>
+                <div class="menu-row"><span>CAPPUCCINO</span> <span class="menu-price">£4.75</span></div>
+                <div class="menu-row"><span>LATTE</span> <span class="menu-price">£4.75</span></div>
+                <div class="menu-row"><span>AMERICANO</span> <span class="menu-price">£4.25</span></div>
+                <div class="menu-row"><span>MOCHA</span> <span class="menu-price">£4.95</span></div>
+                <div class="menu-row"><span>ESPRESSO</span> <span class="menu-price">£3.45</span></div>
+                <div class="menu-row"><span>DOUBLE ESPRESSO</span> <span class="menu-price">£3.95</span></div>
+                <div class="menu-row"><span>HOT CHOCOLATE</span> <span class="menu-price">£4.95</span></div>
+            </div>
+        </section>
+
+        <!-- Footer Info -->
+        <section class="menu-section" style="margin-bottom: 0;">
+            <div class="info-box" style="background-color: var(--gold-text); text-align: left;">
+                <p style="margin-bottom: 10px;">Food allergies & intolerances: Before ordering please speak to our staff about your requirements.</p>
+                <p style="margin-bottom: 10px;"><u>Please click here for further information on allergens.</u></p>
+                <p>All weights are approximate uncooked weights that may reduce during cooking process.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            
+            <!-- Left Side -->
+            <div class="footer-left">
+                <img src="348s-removebg-preview.png" class="footer-logo" alt="The Smoke Haus Logo">
+                <p class="slogan">#We salute you</p>
+                <div class="footer-nav">
+                    <a href="About.html">ABOUT</a>
+                    <a href="menu.html">MENU</a>
+                    <a href="Drink.html">DRINKS</a>
+                    <a href="offer.html">OFFERS</a>
+                    <a href="music.html">MUSIC</a>
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="footer-right">
+                <div class="venue-info">Venues Cardiff</div>
+                <div class="social-icons">
+                    <a href="https://x.com/i/flow/login?lang=en" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/?locale2=en_GB&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="copyright">
+                <p>
+                    © The Smoke Haus 2025 
+                    <span class="privacy">Privacy Policy</span> 
+                    <span class="terms">Terms of use</span>
+                </p>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.5;">The Smoke Haus is a company registered in England and Wales. No. 13840375</p>
+                <a href="#" class="design-credit">Web Design Cardiff</a>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>
