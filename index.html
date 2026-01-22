@@ -3,9 +3,489 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Great American Barbecue Food in South Wales at The Smoke Haus</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eater&family=Rye&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <style>
+        /* --- CSS Variables & Reset --- */
+        :root {
+            --gold-primary: rgb(176, 142, 58);
+            --gold-hover: rgb(161, 124, 29);
+            --black-bg: #000000;
+            --text-white: #ffffff;
+            --font-head: "Rye", serif;
+            --font-body: monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--black-bg);
+            color: var(--text-white);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
+
+        .logo-container img {
+            width: 120px;
+            height: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-link {
+            font-family: var(--font-body);
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--text-white);
+            padding: 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--gold-hover);
+        }
+
+        /* Book Online Button Style */
+        .btn-book {
+            background: transparent;
+            border: none;
+            color: var(--text-white);
+            font-size: 17px;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 1px 2px 3px 50px rgb(153, 125, 53) inset;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-book:hover {
+            box-shadow: 0px 0px 0px 2px rgb(153, 125, 53) inset;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: var(--gold-hover);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 80vh; /* Takes up most of the initial screen */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .hero-title {
+            font-family: var(--font-head);
+            font-size: 60px;
+            text-align: center;
+            color: var(--text-white);
+            opacity: 0.9;
+            text-transform: uppercase;
+            padding: 0 20px;
+        }
+
+        /* --- Content Sections --- */
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Layout Grid for Text + Image */
+        .section-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .section-row.reverse {
+            direction: rtl; /* Switches order visually */
+        }
+        
+        .section-row.reverse .text-content {
+            direction: ltr; /* Resets text direction */
+        }
+
+        .section-title {
+            font-family: var(--font-head);
+            font-size: 50px;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .section-text {
+            font-size: 16px;
+            font-weight: bold;
+            opacity: 0.9;
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        .section-image.small {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Divider Image */
+        .divider-container {
+            text-align: center;
+            margin: -50px 0 50px 0; /* Overlap slightly */
+        }
+        .divider-container img {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #111;
+            padding: 60px 50px 30px 50px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 40px;
+        }
+
+        .footer-left {
+            text-align: left;
+        }
+
+        .footer-right {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .footer-logo {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .slogan {
+            font-family: var(--font-head);
+            font-size: 40px;
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 20px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a:hover {
+            color: var(--gold-hover);
+        }
+
+        .venue-info {
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            font-size: 15px;
+            color: var(--text-white);
+            margin-bottom: 15px;
+        }
+        
+        .venue-info:hover {
+            color: var(--gold-hover);
+            cursor: pointer;
+        }
+
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+        }
+
+        .social-icons a {
+            color: var(--gold-primary);
+        }
+
+        .social-icons a:hover {
+            color: var(--gold-hover);
+        }
+
+        .copyright {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        .copyright span {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        .copyright span:hover {
+            color: var(--gold-hover);
+        }
+
+        .design-credit {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .design-credit:hover {
+            color: var(--gold-hover);
+        }
+
+        /* --- Media Queries (Responsiveness) --- */
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .nav-menu {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .btn-book {
+                margin-left: 10px;
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Stack Content Sections */
+            .section-row, .section-row.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                text-align: center;
+            }
+            .section-row.reverse .text-content {
+                direction: ltr;
+            }
+            
+            .section-text {
+                text-align: center;
+            }
+
+            .section-image {
+                margin-top: 20px;
+                max-width: 100%;
+            }
+
+            .divider-container img {
+                width: 80%;
+            }
+
+            /* Footer Stack */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-right {
+                align-items: center;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .footer-nav {
+                justify-content: center;
+                margin-top: 20px;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <!-- Header / Top Navigation -->
+    <header>
+        <div class="logo-container">
+            <!-- Using user's top logo link -->
+            <img src="348s-removebg-preview.png" alt="The Smoke Haus Logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-link">ABOUT</a>
+            <a href="menu.html" class="nav-link">MENU</a>
+            <a href="Drink.html" class="nav-link">DRINKS</a>
+            <a href="offer.html" class="nav-link">OFFERS</a>
+            <a href="music.html" class="nav-link">MUSIC</a>
+            <a href="booking.html" class="btn-book">BOOK ONLINE</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="antique-bookshelf-rustic-domestic-room-adds-elegance-decor-generated-by-ai.jpg" class="hero-bg" alt="Background">
+        <h1 class="hero-title">Where We're<br>Coming From</h1>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-container">
+
+        <!-- Section 1: The Haus Speciality -->
+        <section class="section-row">
+            <div class="text-content">
+                <h2 class="section-title">The Haus<br>Speciality:<br>Barbecue</h2>
+                <p class="section-text">
+                    Let’s be clear. This isn’t the kind of barbecue you cook at home. Our menu is from the traditions of good old American barbecue from way down in the South. There, they lovingly slow-cook the meat over a real wood fire. Why? For the smoke. The smoke from the burning wood is the essential ingredient. It infuses the meat with its tone and flavour to create the rich, deep and distinctive smoky taste that makes their, and our, barbecue food so authentically sumptuous. Sauce is optional, smoke isn’t.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="smoky-ribs-sizzle-open-flame-grill.jpg" class="section-image" alt="Smoky Ribs">
+            </div>
+        </section>
+
+        <!-- Divider Image -->
+        <div class="divider-container">
+            <img src="Untitled1-removebg-preview.png" alt="Divider">
+        </div>
+
+        <!-- Section 2: How We Got Started -->
+        <section class="section-row reverse">
+            <div class="text-content">
+                <h2 class="section-title">How we got<br>started</h2>
+                <p class="section-text">
+                    We got into the restaurant business to get off the corporate ladder. On a soul-searching trip to New Orleans we fell so deeply in love with the barbecue experience that we decided right there and then we were going to bottle it and bring it back to Wales. We got home, quit our jobs and sunk everything into a place on Swansea’s Wind Street. As quick as that, The Smoke Haus was born. It wasn’t easy, but from that day to this it’s been great fun.
+                </p>
+            </div>
+            <div class="image-content">
+                <img src="rustic-brick-wall-background.jpg" class="section-image" alt="Rustic Brick Wall">
+            </div>
+        </section>
+
+        <!-- Section 3: Born in the USA -->
+        <section class="section-row">
+            <div class="text-content">
+                <h2 class="section-title">Born in the USA</h2>
+                <p class="section-text">
+                    You’ve probably noticed it’s not just our menu that’s influenced by the USA. That’s because great American barbecue food is all about the experience. It wasn’t enough to simply recreate the feel-good flavours we’re so passionate about. We also wanted to capture the atmosphere, warmth and genuine hospitality that great barbecue comes with. If you’ve never sat in a Kentucky biker bar breathing in the smoky aroma of a tender rack of prime pork ribs, come on down.
+                </p>
+            </div>
+            <div class="image-content">
+                <!-- Small square image as requested -->
+                <img src="41+jsgQ24oL._QL92_SH45_SS200_.jpg" class="section-image small" alt="USA Detail">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer / Bottom Section -->
+    <footer>
+        <div class="footer-grid">
+            
+            <!-- Left Side: Logo, Slogan, Nav -->
+            <div class="footer-left">
+                <img src="348s-removebg-preview.png" class="footer-logo" alt="The Smoke Haus Logo">
+                <p class="slogan">#We salute you</p>
+                <div class="footer-nav">
+                    <a href="index.html">ABOUT</a>
+                    <a href="menu.html">MENU</a>
+                    <a href="Drinks.html">DRINKS</a>
+                    <a href="offer.html">OFFERS</a>
+                    <a href="music.html">MUSIC</a>
+                </div>
+            </div>
+
+            <!-- Right Side: Venue, Socials, Copyright -->
+            <div class="footer-right">
+                <div class="venue-info">Venues Cardiff</div>
+                <div class="social-icons">
+                    <a href="https://x.com/i/flow/login?lang=en" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/?hl=en" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/?locale2=en_GB&_rdr" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="copyright">
+                <p>
+                    © The Smoke Haus 2025 
+                    <span class="privacy">Privacy Policy</span> 
+                    <span class="terms">Terms of use</span>
+                </p>
+                <p style="font-size: 12px; margin-top: 5px; opacity: 0.5;">The Smoke Haus is a company registered in England and Wales. No. 13840375</p>
+                <a href="#" class="design-credit">Web Design Cardiff</a>
+            </div>
+
+        </div>
+    </footer>
+
 </body>
 </html>
