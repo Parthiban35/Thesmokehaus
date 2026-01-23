@@ -9,18 +9,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Eater&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <style>
-        /* --- CSS Variables & Reset --- */
+        /* --- Variables & Reset --- */
         :root {
             --gold-primary: rgb(176, 142, 58);
             --gold-hover: rgb(161, 124, 29);
-            --black-bg: #000000;
+            --gold-bg: rgb(191, 161, 85);
+            --gold-box: rgb(162, 135, 66);
+            --gold-text: rgb(129, 105, 45);
+            --black-bg: rgb(29, 27, 27);
             --text-white: #ffffff;
             --font-head: "Rye", serif;
+            --font-subhead: "Finger Paint", sans-serif;
             --font-body: monospace;
         }
 
@@ -35,7 +40,7 @@
             color: var(--text-white);
             font-family: var(--font-body);
             line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-x: hidden;
         }
 
         a {
@@ -46,16 +51,17 @@
 
         img {
             max-width: 100%;
+            height: auto;
             display: block;
         }
 
-        /* --- Header & Navigation --- */
+        /* --- Header --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 50px;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: #000;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -75,7 +81,7 @@
 
         .nav-link {
             font-family: var(--font-body);
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold;
             color: var(--text-white);
             padding: 10px;
@@ -85,7 +91,6 @@
             color: var(--gold-hover);
         }
 
-        /* Book Online Button Style */
         .btn-book {
             background: transparent;
             border: none;
@@ -105,97 +110,291 @@
             color: var(--gold-hover);
         }
 
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
+        /* --- Main Content --- */
+        .content-wrapper {
             width: 100%;
-            height: 80vh; /* Takes up most of the initial screen */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
         }
 
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-            z-index: -1;
+        /* Hero Section */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
         }
 
         .hero-title {
-            font-family: var(--font-head);
-            font-size: 60px;
-            text-align: center;
-            color: var(--text-white);
-            opacity: 0.9;
+            font-family: var(--font-head); /* Rye */
+            font-size: 80px;
             text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .haus-text {
+            font-family: var(--font-head);
+            font-size: 80px;
+            color: var(--text-white);
+        }
+
+        .dove-icon {
+            font-size: 50px;
+            color: var(--gold-primary);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero-subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cardiff-text {
+            font-family: var(--font-head);
+            font-size: 40px;
+            color: var(--text-white);
+            margin-right: 20px;
+        }
+
+        .diff-text {
+            font-family: var(--font-subhead); /* Finger Paint */
+            font-size: 40px;
+            color: rgb(5, 5, 5);
+            text-transform: uppercase;
+            line-height: 37px;
+        }
+
+        /* Card Section (Our Food) */
+        .card-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 500px;
+            margin: 60px auto;
             padding: 0 20px;
         }
 
-        /* --- Content Sections --- */
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
+        .card-container {
+            box-shadow: 2px 3px 4px 300px var(--gold-box) inset;
+            height: 500px; /* Matches .divi height */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            z-index: 2;
         }
 
-        /* Layout Grid for Text + Image */
-        .section-row {
+        .card-img {
+            width: 100%;
+            max-width: 180px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+
+        .card-text {
+            font-family: var(--font-head); /* Rye */
+            font-size: 40px;
+            color: black;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        .card-desc {
+            font-family: var(--font-body);
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #222;
+        }
+
+        /* Buttons inside cards */
+        .btn-card {
+            background: transparent;
+            border: none;
+            color: var(--text-white);
+            font-size: 17px;
+            padding: 15px 25px;
+            cursor: pointer;
+            box-shadow: 1px 2px 3px 50px rgb(6, 6, 6) inset;
+            font-weight: bold;
+            font-family: var(--font-body);
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-card:hover {
+            box-shadow: 0px 0px 0px 2px rgb(8, 8, 8) inset;
+            padding-top: 18px;
+            padding-bottom: 18px;
+            color: var(--text-white);
+        }
+        
+        .btn-secondary {
+            box-shadow: 1px 2px 3px 50px rgb(129, 105, 45) inset;
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0px 0px 0px 2px rgb(129, 105, 45) inset;
+        }
+
+        .btn-underline {
+            color: black;
+            font-family: var(--font-body);
+            font-size: 15px;
+            text-transform: uppercase;
+            border-bottom: solid;
+            padding-bottom: 8px;
+            border-color: black;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-underline:hover {
+            color: black;
+            border-top: solid;
+            padding-top: 3px;
+        }
+
+        /* Split Section (Drinks & Book Table) */
+        .split-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 40px;
-            align-items: center;
-            margin-bottom: 100px;
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
         }
 
-        .section-row.reverse {
-            direction: rtl; /* Switches order visually */
+        .split-card {
+            box-shadow: 2px 3px 4px 300px rgb(8, 8, 8) inset;
+            height: 400px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 2;
         }
-        
-        .section-row.reverse .text-content {
-            direction: ltr; /* Resets text direction */
+
+        .split-img {
+            max-width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .split-title {
+            font-family: var(--font-head);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: black;
+        }
+
+        .split-desc {
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Yellow Stripe Section (Book a table) */
+        .yellow-section {
+            width: 100%;
+            background-color: var(--gold-bg);
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            margin: 80px 0;
         }
 
         .section-title {
             font-family: var(--font-head);
             font-size: 50px;
-            color: var(--gold-primary);
             text-transform: uppercase;
             margin-bottom: 20px;
-            line-height: 1.2;
         }
 
-        .section-text {
-            font-size: 16px;
+        .section-desc {
+            font-family: var(--font-body);
+            font-size: 18px;
             font-weight: bold;
-            opacity: 0.9;
+            line-height: 1.5;
+            max-width: 800px;
+            margin-bottom: 30px;
+            color: #000;
         }
 
-        .section-image {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        
-        .section-image.small {
-            max-width: 300px;
-            margin: 0 auto;
+        /* "Where we're coming from" Section */
+        .quote-section {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        /* Divider Image */
-        .divider-container {
+        .quote-title {
+            font-family: var(--font-head);
+            font-size: 50px;
+            text-transform: uppercase;
             text-align: center;
-            margin: -50px 0 50px 0; /* Overlap slightly */
+            margin-bottom: 15px;
         }
-        .divider-container img {
-            max-width: 400px;
-            margin: 0 auto;
+
+        .quote-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        /* Footer Quote Section */
+        .final-quote {
+            width: 100%;
+            height: 500px;
+            background-image: url('photorealistic-wedding-venue-with-intricate-decor-ornaments.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .final-text-top {
+            font-family: var(--font-head);
+            font-size: 50px;
+            color: var(--text-white);
+            text-transform: uppercase;
+        }
+
+        .final-text-main {
+            font-family: var(--font-head);
+            font-size: 80px;
+            color: var(--text-white);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-top: 10px;
         }
 
         /* --- Footer --- */
@@ -213,175 +412,57 @@
             gap: 40px;
         }
 
-        .footer-left {
-            text-align: left;
-        }
-
-        .footer-right {
-            text-align: right;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            justify-content: center;
-        }
-
-        .footer-logo {
-            width: 120px;
-            margin-bottom: 20px;
-        }
-
-        .slogan {
-            font-family: var(--font-head);
-            font-size: 40px;
-            color: var(--text-white);
-            margin-bottom: 20px;
-        }
-
-        .footer-nav {
-            display: flex;
-            gap: 20px;
-            font-family: var(--font-body);
-            font-size: 15px;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a:hover {
-            color: var(--gold-hover);
-        }
-
-        .venue-info {
-            font-family: var(--font-body);
-            text-transform: uppercase;
-            font-size: 15px;
-            color: var(--text-white);
-            margin-bottom: 15px;
-        }
+        .footer-left { text-align: left; }
+        .footer-right { text-align: right; display: flex; flex-direction: column; align-items: flex-end; justify-content: center; }
         
-        .venue-info:hover {
-            color: var(--gold-hover);
-            cursor: pointer;
-        }
-
-        .social-icons {
-            margin-top: 10px;
-            display: flex;
-            gap: 20px;
-            font-size: 20px;
-        }
-
-        .social-icons a {
-            color: var(--gold-primary);
-        }
-
-        .social-icons a:hover {
-            color: var(--gold-hover);
-        }
-
+        .footer-logo { width: 120px; margin-bottom: 20px; }
+        .slogan { font-family: var(--font-head); font-size: 40px; color: var(--text-white); margin-bottom: 20px; }
+        .footer-nav { display: flex; gap: 20px; font-size: 15px; flex-wrap: wrap; word-spacing: 6px; }
+        .footer-nav a:hover { color: var(--gold-hover); }
+        .venue-info { text-transform: uppercase; font-size: 15px; margin-bottom: 15px; }
+        .venue-info:hover { color: var(--gold-hover); cursor: pointer; }
+        .social-icons { margin-top: 10px; display: flex; gap: 20px; font-size: 20px; }
+        .social-icons a { color: var(--gold-primary); }
+        .social-icons a:hover { color: var(--gold-hover); }
+        
         .copyright {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #222;
-            font-size: 14px;
-            opacity: 0.7;
+            grid-column: 1 / -1; text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; font-size: 14px; opacity: 0.7;
         }
+        .copyright span { margin: 0 10px; cursor: pointer; }
+        .copyright span:hover { color: var(--gold-hover); }
+        .design-credit { display: block; margin-top: 10px; font-size: 14px; cursor: pointer; }
+        .design-credit:hover { color: var(--gold-hover); }
 
-        .copyright span {
-            margin: 0 10px;
-            cursor: pointer;
-        }
-        
-        .copyright span:hover {
-            color: var(--gold-hover);
-        }
-
-        .design-credit {
-            display: block;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .design-credit:hover {
-            color: var(--gold-hover);
-        }
-
-        /* --- Media Queries (Responsiveness) --- */
+        /* --- Media Queries --- */
         @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                padding: 15px;
-            }
-            .nav-menu {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .btn-book {
-                margin-left: 10px;
-            }
-            
-            .hero-title {
-                font-size: 40px;
-            }
+            header { flex-direction: column; padding: 15px; }
+            .nav-menu { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
+            .hero-title { font-size: 50px; }
+            .haus-text { font-size: 50px; }
+            .split-section { grid-template-columns: 1fr; }
+            .card-section { max-width: 100%; }
         }
 
         @media (max-width: 768px) {
-            /* Stack Content Sections */
-            .section-row, .section-row.reverse {
-                grid-template-columns: 1fr;
-                direction: ltr;
-                text-align: center;
-            }
-            .section-row.reverse .text-content {
-                direction: ltr;
-            }
-            
-            .section-text {
-                text-align: center;
-            }
-
-            .section-image {
-                margin-top: 20px;
-                max-width: 100%;
-            }
-
-            .divider-container img {
-                width: 80%;
-            }
-
-            /* Footer Stack */
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-right {
-                align-items: center;
-                text-align: center;
-                margin-top: 30px;
-            }
-
-            .footer-nav {
-                justify-content: center;
-                margin-top: 20px;
-            }
-            
-            .social-icons {
-                justify-content: center;
-            }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-right { align-items: center; text-align: center; margin-top: 30px; }
+            .footer-nav { justify-content: center; margin-top: 20px; }
+            .social-icons { justify-content: center; }
+            .final-text-main { font-size: 50px; }
+            .final-text-top { font-size: 35px; }
+            .hero-subtitle { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Top Navigation -->
+    <!-- Header -->
     <header>
         <div class="logo-container">
-            <!-- Using user's top logo link -->
             <img src="348s-removebg-preview.png" alt="The Smoke Haus Logo">
         </div>
         <nav class="nav-menu">
-            <a href="index.html" class="nav-link">ABOUT</a>
+            <a href="about.html" class="nav-link">ABOUT</a>
             <a href="menu.html" class="nav-link">MENU</a>
             <a href="Drink.html" class="nav-link">DRINKS</a>
             <a href="offer.html" class="nav-link">OFFERS</a>
@@ -390,80 +471,99 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <img src="antique-bookshelf-rustic-domestic-room-adds-elegance-decor-generated-by-ai.jpg" class="hero-bg" alt="Background">
-        <h1 class="hero-title">Where We're<br>Coming From</h1>
-    </section>
-
     <!-- Main Content -->
-    <main class="content-container">
+    <main class="content-wrapper">
 
-        <!-- Section 1: The Haus Speciality -->
-        <section class="section-row">
-            <div class="text-content">
-                <h2 class="section-title">The Haus<br>Speciality:<br>Barbecue</h2>
-                <p class="section-text">
-                    Let’s be clear. This isn’t the kind of barbecue you cook at home. Our menu is from the traditions of good old American barbecue from way down in the South. There, they lovingly slow-cook the meat over a real wood fire. Why? For the smoke. The smoke from the burning wood is the essential ingredient. It infuses the meat with its tone and flavour to create the rich, deep and distinctive smoky taste that makes their, and our, barbecue food so authentically sumptuous. Sauce is optional, smoke isn’t.
-                </p>
-            </div>
-            <div class="image-content">
-                <img src="smoky-ribs-sizzle-open-flame-grill.jpg" class="section-image" alt="Smoky Ribs">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Hangout<br> at our<br><span class="haus-text">Haus</span></h1>
+        </section>
+
+        <!-- Our Food Section -->
+        <section class="card-section">
+            <div class="card-container">
+                <img src="Untitled5-removebg-preview.png" class="card-img" alt="Food Icon">
+                <div class="card-text">
+                    <b>Our Food</b><br>
+                    <span class="card-desc">Turn up hungry<br>We do big portions and bold flavours that'll<br>make you sigh with enjoyment.</span>
+                </div>
+                <a href="menu.html" class="btn-card">Show me menu</a>
+                <div class="btn-underline">Book a Table</div>
             </div>
         </section>
 
-        <!-- Divider Image -->
-        <div class="divider-container">
-            <img src="Untitled1-removebg-preview.png" alt="Divider">
-        </div>
-
-        <!-- Section 2: How We Got Started -->
-        <section class="section-row reverse">
-            <div class="text-content">
-                <h2 class="section-title">How we got<br>started</h2>
-                <p class="section-text">
-                    We got into the restaurant business to get off the corporate ladder. On a soul-searching trip to New Orleans we fell so deeply in love with the barbecue experience that we decided right there and then we were going to bottle it and bring it back to Wales. We got home, quit our jobs and sunk everything into a place on Swansea’s Wind Street. As quick as that, The Smoke Haus was born. It wasn’t easy, but from that day to this it’s been great fun.
+        <!-- Drinks & Get them In Section -->
+        <section class="split-section">
+            <!-- Drinks -->
+            <div class="split-card">
+                <img src="Untitled6-removebg-preview.png" class="split-img" alt="Drinks Icon">
+                <div class="split-title">Get them in</div>
+                <p class="split-desc">
+                    You'll need cold beer to wash down<br>
+                    those big old flavours. We've got plenty.
                 </p>
+                <a href="drinks.html" class="btn-card btn-secondary">What You drinks?</a>
             </div>
-            <div class="image-content">
-                <img src="rustic-brick-wall-background.jpg" class="section-image" alt="Rustic Brick Wall">
+
+            <!-- Get them In (About Link) -->
+            <div class="split-card">
+                <div class="split-title" style="margin-bottom: 0;">
+                    Book a table
+                </div>
+                <p class="split-desc" style="margin-bottom: 20px;">
+                    We're not too big on formality, you're welcome to drop by anytime. But if you're making a special trip or<br><span style="color: black;">bringing friends, tell us you're coming and we'll save you a space</span>
+                </p>
+                <a href="booking.html" class="btn-card btn-secondary">CARDIFF</a>
             </div>
         </section>
 
-        <!-- Section 3: Born in the USA -->
-        <section class="section-row">
-            <div class="text-content">
-                <h2 class="section-title">Born in the USA</h2>
-                <p class="section-text">
-                    You’ve probably noticed it’s not just our menu that’s influenced by the USA. That’s because great American barbecue food is all about the experience. It wasn’t enough to simply recreate the feel-good flavours we’re so passionate about. We also wanted to capture the atmosphere, warmth and genuine hospitality that great barbecue comes with. If you’ve never sat in a Kentucky biker bar breathing in the smoky aroma of a tender rack of prime pork ribs, come on down.
-                </p>
-            </div>
-            <div class="image-content">
-                <!-- Small square image as requested -->
-                <img src="41+jsgQ24oL._QL92_SH45_SS200_.jpg" class="section-image small" alt="USA Detail">
-            </div>
+        <!-- Yellow Stripe Section -->
+        <section class="yellow-section">
+            <h2 class="section-title">Book a table</h2>
+            <p class="section-desc">
+                We're not too big on formality, you're welcome to drop by anytime. But if you're making a special trip or bringing friends, tell us you're coming and we'll save you a space
+            </p>
+            <a href="booking.html" class="btn-card">CARDIFF</a>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <h2 class="quote-title">Where we're<br> coming from</h2>
+            <p class="quote-text">
+                At Smoke Haus we're all about delivering big flavours of authentic American barbecue and providing a little taste of land that inspired it.
+            </p>
+            <br><br>
+            <a href="about.html" class="btn-card btn-secondary" style="margin-top: 10px;">Get to know us</a>
         </section>
 
     </main>
 
-    <!-- Footer / Bottom Section -->
+    <!-- Final Quote Background -->
+    <section class="final-quote">
+        <div>
+            <div class="final-text-top">Not the kind of</div>
+            <div class="final-text-main">barbecue<br>you have<br>at home</div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="footer-grid">
             
-            <!-- Left Side: Logo, Slogan, Nav -->
+            <!-- Left Side -->
             <div class="footer-left">
                 <img src="348s-removebg-preview.png" class="footer-logo" alt="The Smoke Haus Logo">
                 <p class="slogan">#We salute you</p>
                 <div class="footer-nav">
-                    <a href="index.html">ABOUT</a>
+                    <a href="about.html">ABOUT</a>
                     <a href="menu.html">MENU</a>
-                    <a href="Drinks.html">DRINKS</a>
+                    <a href="Drink.html">DRINKS</a>
                     <a href="offer.html">OFFERS</a>
                     <a href="music.html">MUSIC</a>
                 </div>
             </div>
 
-            <!-- Right Side: Venue, Socials, Copyright -->
+            <!-- Right Side -->
             <div class="footer-right">
                 <div class="venue-info">Venues Cardiff</div>
                 <div class="social-icons">
